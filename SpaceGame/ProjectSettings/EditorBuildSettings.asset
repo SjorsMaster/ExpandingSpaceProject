@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/UI/Menu.unity
+    guid: dc647248587f1ce47bd5abced0352ac3
+  - enabled: 1
+    path: Assets/_Scenes/UI/GameOver.unity
+    guid: 8b69c79e81a04fe4d81625902a0c7725
+  - enabled: 1
+    path: Assets/_Scenes/UI/Win.unity
+    guid: 954ff86a5aa72cb42a60a840f576075a
+  - enabled: 1
+    path: Assets/_Scenes/Stages/5.unity
+    guid: 9be7d09b4664d8b40a7147680eef965e
+  - enabled: 1
+    path: Assets/_Scenes/Stages/1.unity
+    guid: f6685020820b9404893b71d1308add76
+  - enabled: 1
+    path: Assets/_Scenes/UI/Loading.unity
+    guid: 48a0b4e541e0a13428ee852c7ef0a29f
+  - enabled: 1
+    path: Assets/_Scenes/UI/Overworld.unity
+    guid: be7eeb1dcf636764a9b22ff87d26daf1
+  - enabled: 1
+    path: Assets/_Scenes/UI/RESET.unity
+    guid: 4217ee39dac19914284d1dc948d8ff3b
+  - enabled: 1
+    path: Assets/_Scenes/UI/StoryPage1.unity
+    guid: 94cdd3c26d60c2f47b203b44a2d0bd36
+  - enabled: 1
+    path: Assets/_Scenes/UI/StoryPage2.unity
+    guid: 1e290be20a6e8c54b9f390cacddb4155
+  - enabled: 1
+    path: Assets/_Scenes/Stages/2.unity
+    guid: 5d2f3b4c928f31e4c8283fd1d0ffa87e
+  - enabled: 1
+    path: Assets/_Scenes/Stages/3.unity
+    guid: 03756aa59ac69ac42a318da3fe7125f2
+  - enabled: 1
+    path: Assets/_Scenes/Stages/4.unity
+    guid: 78b31c8c4488a1144b0276c2e6df2cbc
+  m_configObjects: {}
