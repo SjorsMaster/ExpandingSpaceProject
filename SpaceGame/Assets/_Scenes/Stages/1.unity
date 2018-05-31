@@ -4183,11 +4183,13 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1535871182}
-  m_Text: 'Keep an eye
+  m_Text: 'Spacie can move with
 
-    On the Oxygen
+    The arrow keys
 
-    Levels'
+    To jump
+
+    PRESS SPACE!'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
