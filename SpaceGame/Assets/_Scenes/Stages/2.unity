@@ -2312,7 +2312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9f9a4ae0f055a438342f24e70eaf70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1.02
+  Speed: 0.98
   yPos: -2.82
   player: {fileID: 2015225037}
 --- !u!1 &880484733
@@ -2992,7 +2992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9f9a4ae0f055a438342f24e70eaf70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1.04
+  Speed: 0.96
   yPos: -3.290653
   player: {fileID: 2015225037}
 --- !u!1 &1156437290
@@ -3590,10 +3590,10 @@ Transform:
   - {fileID: 1050629343}
   - {fileID: 683134542}
   - {fileID: 881821345}
+  - {fileID: 2041510970}
   - {fileID: 1838817499}
   - {fileID: 1675202501}
   - {fileID: 2094822623}
-  - {fileID: 2041510970}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4839,7 +4839,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1358381610}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1693870741
 GameObject:
@@ -5669,7 +5669,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1358381610}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1856877472
 GameObject:
@@ -6188,7 +6188,7 @@ Transform:
   m_LocalScale: {x: 1.8299999, y: 4.08, z: 1}
   m_Children: []
   m_Father: {fileID: 1358381610}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2041510971
 BoxCollider2D:
@@ -6450,7 +6450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a9f9a4ae0f055a438342f24e70eaf70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1.01
+  Speed: 0.99
   yPos: -2.15
   player: {fileID: 2015225037}
 --- !u!1 &2094822620
@@ -6556,7 +6556,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1358381610}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2094822624
 Rigidbody2D:
