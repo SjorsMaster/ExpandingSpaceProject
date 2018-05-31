@@ -38,7 +38,7 @@ cls
 set "commited=false"
 set "pulled=false"
 
-set "URL=https://github.com/SjorsMaster/EXPANDING_SPACE_2018.git"
+set "URL=https://github.com/Sjooooors/ExpandingSpaceProject.git"
 
 :start
 echo Set URL = %URL%
