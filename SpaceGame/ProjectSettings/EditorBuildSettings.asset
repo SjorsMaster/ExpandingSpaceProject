@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Stages/4.unity
     guid: 78b31c8c4488a1144b0276c2e6df2cbc
+  - enabled: 1
+    path: Assets/_Scenes/UI/Save_Err.unity
+    guid: 76eb8a878cc2894459263aa26da06408
   m_configObjects: {}
