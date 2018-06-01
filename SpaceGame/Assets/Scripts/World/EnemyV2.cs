@@ -32,7 +32,7 @@ public class EnemyV2 : MonoBehaviour {
 
         if (flipped)//Als omgedraait
         {
-            Timer++;//Tel tijd op       
+            Timer =+ 1 * Time.deltaTime;//Tel tijd op       
         }
         if (Timer >= 10)//Als tijd boven 10 MS zit
         {

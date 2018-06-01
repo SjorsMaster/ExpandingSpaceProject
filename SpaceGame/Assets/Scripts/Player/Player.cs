@@ -167,14 +167,14 @@ public class Player : MonoBehaviour
 
             //m_Animator.SetInteger("WalkJumpIdle", 1);
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            transform.Translate(new Vector2(0.8f, 0) * WalkSpeed);//Beweegt karakter heen en weer.
+            transform.Translate(new Vector2(0.8f, 0) * WalkSpeed * Time.deltaTime);//Beweegt karakter heen en weer.
         }
         if (Input.GetKey("left"))
         {
             MovingL = true;
             //m_Animator.SetInteger("WalkJumpIdle", 1);
             transform.rotation = Quaternion.Euler(0, 180f, 0);
-            transform.Translate(new Vector2(0.8f, 0) * WalkSpeed);//Beweegt karakter heen en weer.
+            transform.Translate(new Vector2(0.8f, 0) * WalkSpeed * Time.deltaTime);//Beweegt karakter heen en weer.
         }
         if (Input.GetKeyDown("space"))
         {
@@ -208,7 +208,7 @@ public class Player : MonoBehaviour
         Timer--;//Telt de timer af
         if (Timer == 0)//kijkt of de timer op 0 staat
         {
-            cooldown.fillAmount -= 0.005f * MinTime;//<--Shailesh??
+            cooldown.fillAmount -= 0.005f * MinTime * Time.deltaTime;//<--Shailesh??
             Timer = 60;//<--Shailesh??
         }
         if (Input.GetKeyDown("escape"))//Als escape word ingedrukt
@@ -252,8 +252,8 @@ public class Player : MonoBehaviour
             Counter++;//COUNTER BIJTELLEN??
             if (Counter <= 100)//???
             {
-                IntJumper = IntJumper - 0.1f;//Jump effect denk ik?
-                transform.Translate(new Vector2(0, IntJumper) * Speed);//Sprong
+                IntJumper = IntJumper - 0.1f * Time.deltaTime;//Jump effect denk ik?
+                transform.Translate(new Vector2(0, IntJumper) * Speed * Time.deltaTime);//Sprong
                 ///Mijn god hoe werkt dit hoe heb ik dit gebouwt
             }
         }
