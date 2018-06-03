@@ -13,7 +13,8 @@ public class AchievementChecker : MonoBehaviour
     public GameObject CreateObject;
     private int AchievementState;
 
-    void Start()
+
+    void Awake()
     {
         AchievementState = PlayerPrefs.GetInt(AchievementName.Replace(" ", string.Empty), 0);
 

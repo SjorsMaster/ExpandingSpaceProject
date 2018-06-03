@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     /*<------Booleans------>*/
 
-    private bool Jumped; //Kijken of er is gesprongen
+    private bool MoonJumper; //Kijken of er is gesprongen
     private bool Loaded; //Kijken of GameOver scene niet al is ingeladen.
     private bool holding; //Kijken of de speler iets vast heeft.
     private bool MovingL;
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Ground")
         {
             Instantiate(dust, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity); //Maakt rookeffecten.
-            Jumped = false;//Zet gesprongen op niet waar
+            MoonJumper = false;//Zet gesprongen op niet waar
             IntJumper = 0;//IntJumper 0?
         }
 
@@ -142,12 +142,12 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Ground")
         {
-            Jumped = true;//Zet gesprongen op waar
+            MoonJumper = true;//Zet gesprongen op waar
         }
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
         if(Input.GetKeyDown("g") && Input.GetKeyDown("o") && Input.GetKeyDown("d") && Input.GetKeyDown("`"))
         {
@@ -167,14 +167,14 @@ public class Player : MonoBehaviour
 
             //m_Animator.SetInteger("WalkJumpIdle", 1);
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            transform.Translate(new Vector2(0.8f, 0) * WalkSpeed * Time.deltaTime);//Beweegt karakter heen en weer.
+            transform.Translate(new Vector2(0.8f, 0) * WalkSpeed);//Beweegt karakter heen en weer.
         }
         if (Input.GetKey("left"))
         {
             MovingL = true;
             //m_Animator.SetInteger("WalkJumpIdle", 1);
             transform.rotation = Quaternion.Euler(0, 180f, 0);
-            transform.Translate(new Vector2(0.8f, 0) * WalkSpeed * Time.deltaTime);//Beweegt karakter heen en weer.
+            transform.Translate(new Vector2(0.8f, 0) * WalkSpeed);//Beweegt karakter heen en weer.
         }
         if (Input.GetKeyDown("space"))
         {
@@ -208,7 +208,7 @@ public class Player : MonoBehaviour
         Timer--;//Telt de timer af
         if (Timer == 0)//kijkt of de timer op 0 staat
         {
-            cooldown.fillAmount -= 0.005f * MinTime * Time.deltaTime;//<--Shailesh??
+            cooldown.fillAmount -= 0.005f * MinTime;//<--Shailesh??
             Timer = 60;//<--Shailesh??
         }
         if (Input.GetKeyDown("escape"))//Als escape word ingedrukt
@@ -237,23 +237,24 @@ public class Player : MonoBehaviour
         
         if (Input.GetKeyDown("space") || Input.GetKeyDown("joystick button 0"))///Controllers testen niet op letten\\\
         {
-            if (!Jumped)
+            if (!MoonJumper)
             {
+                PlayerPrefs.SetInt("MoonJumper", PlayerPrefs.GetInt("MoonJumper", 0) + 1);
                 jump.Play();
                 Counter = 0;//Zet jump counter op 0?
                 IntJumper = 3;//????????????????????
             }
-            Jumped = true;//Zet gesprongen op waar
+            MoonJumper = true;//Zet gesprongen op waar
         }
 
 
-        if (Jumped)
+        if (MoonJumper)
         {
             Counter++;//COUNTER BIJTELLEN??
             if (Counter <= 100)//???
             {
-                IntJumper = IntJumper - 0.1f * Time.deltaTime;//Jump effect denk ik?
-                transform.Translate(new Vector2(0, IntJumper) * Speed * Time.deltaTime);//Sprong
+                IntJumper = IntJumper - 0.1f;//Jump effect denk ik?
+                transform.Translate(new Vector2(0, IntJumper) * Speed);//Sprong
                 ///Mijn god hoe werkt dit hoe heb ik dit gebouwt
             }
         }
