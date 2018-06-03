@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/UI/Save_Err.unity
     guid: 76eb8a878cc2894459263aa26da06408
+  - enabled: 1
+    path: Assets/_Scenes/BETA ZONE/Achievements.unity
+    guid: 901982d1143e55f4a863bc2aea5c97d6
   m_configObjects: {}

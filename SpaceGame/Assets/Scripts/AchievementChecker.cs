@@ -12,13 +12,14 @@ public class AchievementChecker : MonoBehaviour
     public bool AlsoCreateObject;
     public GameObject CreateObject;
     private int AchievementState;
-
+    public int AchievementGoalNum = 1;
+    public bool IsExactNumber;
 
     void Awake()
     {
         AchievementState = PlayerPrefs.GetInt(AchievementName.Replace(" ", string.Empty), 0);
 
-        if (AchievementState == 1)
+        if (AchievementState >= AchievementGoalNum && !IsExactNumber || AchievementState == AchievementGoalNum && IsExactNumber)
         {
             AchievementText.text = AchievementName + ": \n" +  IfGotText;
             if (AlsoCreateObject)

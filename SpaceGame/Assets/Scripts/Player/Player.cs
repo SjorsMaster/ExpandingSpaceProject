@@ -266,6 +266,7 @@ public class Player : MonoBehaviour
         {
             GameOver = true;//Gameover word op waar gezet, anders blijft het spawnen
         }
+        PlayerPrefs.SetInt("Deaths", PlayerPrefs.GetInt("Deaths", 0) + 1);
         Instantiate(dead, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Spawnt dood karakter
         Destroy(this.gameObject);//Verwijderd speler.
     }

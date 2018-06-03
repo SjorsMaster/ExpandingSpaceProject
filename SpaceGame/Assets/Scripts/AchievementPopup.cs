@@ -3,63 +3,85 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AchievementPopup : MonoBehaviour {
+public class AchievementPopup : MonoBehaviour
+{
 
     public Text AchievementText;
 
     public Transform Starting;//AchievementPopupStart
     public Transform Ending;//AchievementPopupEind
     public float speed;//AchievementPopupSnelheid
-    
+
     private float step;//AchievementPopupDeltatime
 
-    public bool Got;//AchievementPopupTESTER
-    public bool Reset;//AchievementPopupTESTER
-                    //public float[] Achievement;
-                    
+    private bool Active;
+    //public bool Reset;//AchievementPopupTESTER
+                      //public float[] Achievement;
 
-   
+    bool WentTo;
+    private int Timer;
+
+
     void Start()
     {
-         step = speed * Time.deltaTime;
+        step = speed * Time.deltaTime;
     }
 
-    void Update () {
+    void FixedUpdate()
+    {
         ///string oof = PlayerPrefs.GetInt(Achievement[], 0);
         ///
-        if(PlayerPrefs.GetInt("MoonJumper", 0) == 1000)
+        if (PlayerPrefs.GetInt("MoonJumper", 0) == 1000)
         {
-            GoUp("MoonJumper");
+            GoUp("Moon Jumper");
+            PlayerPrefs.SetInt("MoonJumper", 2000);
         }
+        if (PlayerPrefs.GetInt("Sowemeetagain", 0) == 1)
+        {
+            GoUp("So we meet again");
+            PlayerPrefs.SetInt("Sowemeetagain", 2);
+        }
+        if (PlayerPrefs.GetInt("GetFucked", 0) == 1)
+        {
+            PlayerPrefs.SetInt("GetFucked", 2);
+            GoUp("You're Fucked");
+        }
+        /*if (Reset)
+        {
+            PlayerPrefs.SetInt("MoonJumper", 999);
+        }*/
 
-        if (Got)
+
+
+        if (Active)
         {
-            if (PlayerPrefs.GetInt("MoonJumper", 0) != 2000)
+            Timer++;
+            //Debug.Log(Timer);
+            if (transform.position != Ending.position && !WentTo)
             {
-                PlayerPrefs.SetInt("MoonJumper", 1000);
+                transform.position = Vector3.MoveTowards(transform.position, Ending.position, step);                
             }
-        }
-        if (Reset)
-        {
-            PlayerPrefs.SetInt("MoonJumper", 0);
+            if (transform.position == Ending.position && Timer >= 300)
+            {
+                WentTo = true;
+            }
+            if (WentTo)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, Starting.position, step);
+                if (transform.position == Starting.position)
+                {
+                    
+                    Active = false;
+                    WentTo = false;
+                    Timer = 0;
+                }
+            }
         }
     }
 
     void GoUp(string text)
     {
-        StartCoroutine(PopUp());
         AchievementText.text = text;
-    }
-
-    IEnumerator PopUp()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, Ending.position, step);
-        yield return new WaitForSeconds(5);
-        PopDown();
-    }
-    void PopDown()
-    {
-            PlayerPrefs.SetInt("MoonJumper", 2000);
-        transform.position = Vector3.MoveTowards(transform.position, Starting.position, step);
+        Active = true;
     }
 }
