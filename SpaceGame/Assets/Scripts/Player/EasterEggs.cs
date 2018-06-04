@@ -9,6 +9,10 @@ public class EasterEggs : MonoBehaviour {
 	void Start () {
         //Random message of the day
         int Randomizer = Random.Range(0,6);
+        if (Randomizer == 0)
+        {
+            TextBox.text = "Play brilliant bob instead";
+        }
         if (Randomizer == 1)
         {
             TextBox.text = "I'm bored";
@@ -28,6 +32,10 @@ public class EasterEggs : MonoBehaviour {
         if (Randomizer == 5)
         {
             TextBox.text = "Do I know you?";
+        }
+        if (Randomizer == 6)
+        {
+            TextBox.text = "OOF";
         }
         if (System.DateTime.Now.Day.ToString() == "6" && System.DateTime.Now.Month.ToString() == "1")
         {

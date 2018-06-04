@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//Shailes op line 185 staat een berricht voor je, Lees het even aub. Thanks :)
+
 public class Player : MonoBehaviour
 
 {
@@ -19,6 +21,7 @@ public class Player : MonoBehaviour
     private bool holding; //Kijken of de speler iets vast heeft.
     private bool MovingL;
     private bool MovingR;
+    private bool fly;
 
     public bool GODMODE;
     public bool GameOver; //Kijken of het spel al over is.
@@ -43,6 +46,7 @@ public class Player : MonoBehaviour
     private int StageID; //Level nummer
     private int Completed; //Levels behaald
 
+    public int RocketState = 0;
     public int HaveToCollect;//Hoeveel de speler moet verzamelen om het level te behalen.
     public int left; //Zien hoeveel er nog over zijn.
 
@@ -133,6 +137,8 @@ public class Player : MonoBehaviour
                 holding = false;//Zet vasthouden op nietwaar, want het is weggebracht.
                 Instantiate(confirm, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Creeert confrimatie effect.
                 Collected++;//Telt op hoeveel er verzameld zijn.
+                RocketState++;
+
                 left--;//Trekt af van hoeveel er nog moeten.
                 ShowHolding.text = "Holding nothing!";//Zorgt dat de text aangeeft dat de speler niks vast heeft.
                 ItemsLeft.text = "Left: " + left;//Update te text zodat de speler weet hoeveel er nog zijn.
@@ -154,10 +160,56 @@ public class Player : MonoBehaviour
     
     void FixedUpdate()
     {
-        if(Input.GetKeyDown("g") && Input.GetKeyDown("o") && Input.GetKeyDown("d") && Input.GetKeyDown("`"))
+        //RocketState\\
+        if (RocketState == 1)
+        {
+            //CHANGE SPRITE
+        }
+        if (RocketState == 2)
+        {
+            //CHANGE SPRITE
+        }
+        if (RocketState == 3)
+        {
+            //CHANGE SPRITE
+        }
+        if (RocketState == 4)
+        {
+            //CHANGE SPRITE
+        }
+        if (RocketState >= 5)
+        {
+            //CHANGE SPRITE
+        }
+        //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        //Hey Shailesh kun jij even instellen dat de sprites veranderen, heb hier zelf geen zin in lol.
+
+
+        if (Input.GetKeyDown("g") && Input.GetKeyDown("o") && Input.GetKeyDown("d"))
         {
             GODMODE = true;
             GodMD.text = "GOD MODE ACTIVE.";
+            if (PlayerPrefs.GetInt("HACKER", 0) <= 0)
+            {
+                PlayerPrefs.SetInt("HACKER", 1);
+            }
+        }
+        if (Input.GetKeyDown("f") && Input.GetKeyDown("l") && Input.GetKeyDown("y"))
+        {
+            fly = true;
+            GodMD.text = "FLY MODE ACTIVE.";
+            if (PlayerPrefs.GetInt("HACKER", 0) <= 0)
+            {
+                PlayerPrefs.SetInt("HACKER", 1);
+            }
+        }
+
+        if (fly)
+        {
+            if (Input.GetKey("up"))
+            {
+                transform.Translate(new Vector2(0, +1.75f) * Speed);
+            }
         }
 
         if (Input.GetKeyDown("right") || Input.GetKeyDown("left"))
@@ -221,6 +273,13 @@ public class Player : MonoBehaviour
             cooldown.fillAmount -= 0.005f * MinTime;//<--Shailesh??
             Timer = 60;//<--Shailesh??
         }
+
+                 /*
+                 * <!-----!!!-----!>  vv
+                 * <!-----!!!-----!>  vv
+                 * <!-----!!!-----!>  vv
+                 * <!-----!!!-----!>  vv
+                 */
         if (Input.GetKeyDown("escape"))//Als escape word ingedrukt
         {
             if (!Loaded) {//Kijkt of het niet al is gedrukt.
@@ -232,10 +291,11 @@ public class Player : MonoBehaviour
                  * <!-----!!!-----!>  ^^
                  * <!-----!!!-----!>  ^^
                 */
+
         }
     }
 
-        if(cooldown.fillAmount == 0)//Kijkt of de tijd op is
+        if(cooldown.fillAmount == 0 && !GODMODE)//Kijkt of de tijd op is
         {
             Death();//Voert de dood uit
         }
