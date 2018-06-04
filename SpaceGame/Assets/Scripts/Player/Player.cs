@@ -47,6 +47,9 @@ public class Player : MonoBehaviour
     public int left; //Zien hoeveel er nog over zijn.
 
 
+    public int SelectedSkin;
+
+
     /*<------FLOATS------>*/
 
     private float IntJumper; //Airspeed? 
@@ -78,6 +81,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        SelectedSkin = PlayerPrefs.GetInt("Skin", 0);
+
         //AudioSource audio = GetComponent<AudioSource>();
         m_Animator = GetComponent<Animator>();//Vind de animator van het object.
         CurrentStage = SceneManager.GetActiveScene().name;//Haal scene naam op.
@@ -157,7 +162,10 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown("right") || Input.GetKeyDown("left"))
         {
-            m_Animator.SetInteger("WalkJumpIdle", 1);
+            if (SelectedSkin == 0)
+            {
+                m_Animator.SetInteger("WalkJumpIdle", 1);
+            }
         
         }
 
@@ -178,7 +186,6 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown("space"))
         {
-            m_Animator.SetTrigger("Jump");
         }
         //float x = Input.GetAxis("Horizontal");//Haalt speler's links rechts beweging op.
         //transform.Translate(new Vector2(x, 0) * WalkSpeed);//Beweegt karakter heen en weer.
@@ -195,7 +202,10 @@ public class Player : MonoBehaviour
 
         if (!MovingR && !MovingL)
         {
-            m_Animator.SetInteger("WalkJumpIdle", 0);
+            if (SelectedSkin == 0)
+            {
+                m_Animator.SetInteger("WalkJumpIdle", 0);
+            }
 
         }
         if (Input.GetKeyUp("space"))
@@ -240,6 +250,10 @@ public class Player : MonoBehaviour
             if (!MoonJumper)
             {
                 PlayerPrefs.SetInt("MoonJumper", PlayerPrefs.GetInt("MoonJumper", 0) + 1);
+                if (SelectedSkin == 0)
+                {
+                    m_Animator.SetTrigger("Jump");
+                }
                 jump.Play();
                 Counter = 0;//Zet jump counter op 0?
                 IntJumper = 3;//????????????????????
