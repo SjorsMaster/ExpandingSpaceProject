@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
 
     public Text ItemsLeft; //Laten zien hoeveel items er nog overzijn in dit level.
     public Text ShowHolding; //Laten zien of de speler iets vast heeft.
-    public Text GodMD; //Laten zien of de speler GODMODE aan heeft.
 
 
     /*<------Images------>*/
@@ -184,26 +183,6 @@ public class Player : MonoBehaviour
         //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         //Hey Shailesh kun jij even instellen dat de sprites veranderen, heb hier zelf geen zin in lol.
 
-
-        if (Input.GetKeyDown("g") && Input.GetKeyDown("o") && Input.GetKeyDown("d"))
-        {
-            GODMODE = true;
-            GodMD.text = "GOD MODE ACTIVE.";
-            if (PlayerPrefs.GetInt("HACKER", 0) <= 0)
-            {
-                PlayerPrefs.SetInt("HACKER", 1);
-            }
-        }
-        if (Input.GetKeyDown("f") && Input.GetKeyDown("l") && Input.GetKeyDown("y"))
-        {
-            fly = true;
-            GodMD.text = "FLY MODE ACTIVE.";
-            if (PlayerPrefs.GetInt("HACKER", 0) <= 0)
-            {
-                PlayerPrefs.SetInt("HACKER", 1);
-            }
-        }
-
         if (fly)
         {
             if (Input.GetKey("up"))
@@ -274,27 +253,6 @@ public class Player : MonoBehaviour
             Timer = 60;//<--Shailesh??
         }
 
-                 /*
-                 * <!-----!!!-----!>  vv
-                 * <!-----!!!-----!>  vv
-                 * <!-----!!!-----!>  vv
-                 * <!-----!!!-----!>  vv
-                 */
-        if (Input.GetKeyDown("escape"))//Als escape word ingedrukt
-        {
-            if (!Loaded) {//Kijkt of het niet al is gedrukt.
-                Loaded = true;//Zet het op ingedrukt voor waar
-                SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);//Laad gameover scherm voor testen 
-                /*
-                 * <!-----!!!-----!>  ^^
-                 * <!-----!!!-----!>  ^^
-                 * <!-----!!!-----!>  ^^
-                 * <!-----!!!-----!>  ^^
-                */
-
-        }
-    }
-
         if(cooldown.fillAmount == 0 && !GODMODE)//Kijkt of de tijd op is
         {
             Death();//Voert de dood uit
@@ -358,7 +316,7 @@ public class Player : MonoBehaviour
         }
         else//Zo wel
         {
-            //Debug.Log("Already Completed");//Laat zien dat het level al behaald is.
+            ///Debug.Log("Already Completed");//Laat zien dat het level al behaald is.
         }
         Destroy(this.gameObject);//Verwijderd speler.
     }
