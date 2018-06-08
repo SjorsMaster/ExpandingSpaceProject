@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+//Shailes op line 185 staat een berricht voor je, Lees het even aub. Thanks :)
+
 public class Player : MonoBehaviour
 
 {
@@ -14,11 +16,12 @@ public class Player : MonoBehaviour
 
     /*<------Booleans------>*/
 
-    private bool Jumped; //Kijken of er is gesprongen
+    private bool MoonJumper; //Kijken of er is gesprongen
     private bool Loaded; //Kijken of GameOver scene niet al is ingeladen.
     private bool holding; //Kijken of de speler iets vast heeft.
     private bool MovingL;
     private bool MovingR;
+    private bool fly;
 
     public bool GODMODE;
     public bool GameOver; //Kijken of het spel al over is.
@@ -28,7 +31,6 @@ public class Player : MonoBehaviour
 
     public Text ItemsLeft; //Laten zien hoeveel items er nog overzijn in dit level.
     public Text ShowHolding; //Laten zien of de speler iets vast heeft.
-    public Text GodMD; //Laten zien of de speler GODMODE aan heeft.
 
 
     /*<------Images------>*/
@@ -43,8 +45,12 @@ public class Player : MonoBehaviour
     private int StageID; //Level nummer
     private int Completed; //Levels behaald
 
+    public int RocketState = 0;
     public int HaveToCollect;//Hoeveel de speler moet verzamelen om het level te behalen.
     public int left; //Zien hoeveel er nog over zijn.
+
+
+    public int SelectedSkin;
 
 
     /*<------FLOATS------>*/
@@ -78,6 +84,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        SelectedSkin = PlayerPrefs.GetInt("Skin", 0);
+
         //AudioSource audio = GetComponent<AudioSource>();
         m_Animator = GetComponent<Animator>();//Vind de animator van het object.
         CurrentStage = SceneManager.GetActiveScene().name;//Haal scene naam op.
@@ -95,7 +103,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Ground")
         {
             Instantiate(dust, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity); //Maakt rookeffecten.
-            Jumped = false;//Zet gesprongen op niet waar
+            MoonJumper = false;//Zet gesprongen op niet waar
             IntJumper = 0;//IntJumper 0?
         }
 
@@ -128,6 +136,8 @@ public class Player : MonoBehaviour
                 holding = false;//Zet vasthouden op nietwaar, want het is weggebracht.
                 Instantiate(confirm, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Creeert confrimatie effect.
                 Collected++;//Telt op hoeveel er verzameld zijn.
+                RocketState++;
+
                 left--;//Trekt af van hoeveel er nog moeten.
                 ShowHolding.text = "Holding nothing!";//Zorgt dat de text aangeeft dat de speler niks vast heeft.
                 ItemsLeft.text = "Left: " + left;//Update te text zodat de speler weet hoeveel er nog zijn.
@@ -142,22 +152,51 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Ground")
         {
-            Jumped = true;//Zet gesprongen op waar
+            MoonJumper = true;//Zet gesprongen op waar
         }
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
-        if(Input.GetKeyDown("g") && Input.GetKeyDown("o") && Input.GetKeyDown("d") && Input.GetKeyDown("`"))
+        //RocketState\\
+        if (RocketState == 1)
         {
-            GODMODE = true;
-            GodMD.text = "GOD MODE ACTIVE.";
+            //CHANGE SPRITE
+        }
+        if (RocketState == 2)
+        {
+            //CHANGE SPRITE
+        }
+        if (RocketState == 3)
+        {
+            //CHANGE SPRITE
+        }
+        if (RocketState == 4)
+        {
+            //CHANGE SPRITE
+        }
+        if (RocketState >= 5)
+        {
+            //CHANGE SPRITE
+        }
+        //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        //Hey Shailesh kun jij even instellen dat de sprites veranderen, heb hier zelf geen zin in lol.
+
+        if (fly)
+        {
+            if (Input.GetKey("up"))
+            {
+                transform.Translate(new Vector2(0, +1.75f) * Speed);
+            }
         }
 
         if (Input.GetKeyDown("right") || Input.GetKeyDown("left"))
         {
-            m_Animator.SetInteger("WalkJumpIdle", 1);
+            if (SelectedSkin == 0)
+            {
+                m_Animator.SetInteger("WalkJumpIdle", 1);
+            }
         
         }
 
@@ -167,18 +206,17 @@ public class Player : MonoBehaviour
 
             //m_Animator.SetInteger("WalkJumpIdle", 1);
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            transform.Translate(new Vector2(0.8f, 0) * WalkSpeed * Time.deltaTime);//Beweegt karakter heen en weer.
+            transform.Translate(new Vector2(0.8f, 0) * WalkSpeed);//Beweegt karakter heen en weer.
         }
         if (Input.GetKey("left"))
         {
             MovingL = true;
             //m_Animator.SetInteger("WalkJumpIdle", 1);
             transform.rotation = Quaternion.Euler(0, 180f, 0);
-            transform.Translate(new Vector2(0.8f, 0) * WalkSpeed * Time.deltaTime);//Beweegt karakter heen en weer.
+            transform.Translate(new Vector2(0.8f, 0) * WalkSpeed);//Beweegt karakter heen en weer.
         }
         if (Input.GetKeyDown("space"))
         {
-            m_Animator.SetTrigger("Jump");
         }
         //float x = Input.GetAxis("Horizontal");//Haalt speler's links rechts beweging op.
         //transform.Translate(new Vector2(x, 0) * WalkSpeed);//Beweegt karakter heen en weer.
@@ -195,7 +233,10 @@ public class Player : MonoBehaviour
 
         if (!MovingR && !MovingL)
         {
-            m_Animator.SetInteger("WalkJumpIdle", 0);
+            if (SelectedSkin == 0)
+            {
+                m_Animator.SetInteger("WalkJumpIdle", 0);
+            }
 
         }
         if (Input.GetKeyUp("space"))
@@ -208,24 +249,11 @@ public class Player : MonoBehaviour
         Timer--;//Telt de timer af
         if (Timer == 0)//kijkt of de timer op 0 staat
         {
-            cooldown.fillAmount -= 0.005f * MinTime * Time.deltaTime;//<--Shailesh??
+            cooldown.fillAmount -= 0.005f * MinTime;//<--Shailesh??
             Timer = 60;//<--Shailesh??
         }
-        if (Input.GetKeyDown("escape"))//Als escape word ingedrukt
-        {
-            if (!Loaded) {//Kijkt of het niet al is gedrukt.
-                Loaded = true;//Zet het op ingedrukt voor waar
-                SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);//Laad gameover scherm voor testen 
-                /*
-                 * <!-----!!!-----!>  ^^
-                 * <!-----!!!-----!>  ^^
-                 * <!-----!!!-----!>  ^^
-                 * <!-----!!!-----!>  ^^
-                */
-        }
-    }
 
-        if(cooldown.fillAmount == 0)//Kijkt of de tijd op is
+        if(cooldown.fillAmount == 0 && !GODMODE)//Kijkt of de tijd op is
         {
             Death();//Voert de dood uit
         }
@@ -237,23 +265,28 @@ public class Player : MonoBehaviour
         
         if (Input.GetKeyDown("space") || Input.GetKeyDown("joystick button 0"))///Controllers testen niet op letten\\\
         {
-            if (!Jumped)
+            if (!MoonJumper)
             {
+                PlayerPrefs.SetInt("MoonJumper", PlayerPrefs.GetInt("MoonJumper", 0) + 1);
+                if (SelectedSkin == 0)
+                {
+                    m_Animator.SetTrigger("Jump");
+                }
                 jump.Play();
                 Counter = 0;//Zet jump counter op 0?
                 IntJumper = 3;//????????????????????
             }
-            Jumped = true;//Zet gesprongen op waar
+            MoonJumper = true;//Zet gesprongen op waar
         }
 
 
-        if (Jumped)
+        if (MoonJumper)
         {
             Counter++;//COUNTER BIJTELLEN??
             if (Counter <= 100)//???
             {
-                IntJumper = IntJumper - 0.1f * Time.deltaTime;//Jump effect denk ik?
-                transform.Translate(new Vector2(0, IntJumper) * Speed * Time.deltaTime);//Sprong
+                IntJumper = IntJumper - 0.1f;//Jump effect denk ik?
+                transform.Translate(new Vector2(0, IntJumper) * Speed);//Sprong
                 ///Mijn god hoe werkt dit hoe heb ik dit gebouwt
             }
         }
@@ -265,6 +298,7 @@ public class Player : MonoBehaviour
         {
             GameOver = true;//Gameover word op waar gezet, anders blijft het spawnen
         }
+        PlayerPrefs.SetInt("Deaths", PlayerPrefs.GetInt("Deaths", 0) + 1);
         Instantiate(dead, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Spawnt dood karakter
         Destroy(this.gameObject);//Verwijderd speler.
     }
@@ -282,7 +316,7 @@ public class Player : MonoBehaviour
         }
         else//Zo wel
         {
-            //Debug.Log("Already Completed");//Laat zien dat het level al behaald is.
+            ///Debug.Log("Already Completed");//Laat zien dat het level al behaald is.
         }
         Destroy(this.gameObject);//Verwijderd speler.
     }

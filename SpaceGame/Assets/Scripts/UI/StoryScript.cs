@@ -13,6 +13,7 @@ public class StoryScript : MonoBehaviour
     public float delay = 0.1f;
     public string fullText;
     public string Stage;
+    public bool ClickToSkip = true;
 
     private string currentText = "";
 
@@ -33,7 +34,7 @@ public class StoryScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("space") || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown("space") && ClickToSkip || Input.GetMouseButtonDown(0) && ClickToSkip)
         {
             SceneManager.LoadScene(Stage);
         }

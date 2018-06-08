@@ -13,6 +13,7 @@ TagManager:
   - Exit
   - Winner
   - Dead
+  - Achievement
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Platform
   - Enemy
   - Dead
-  - 
+  - Achievement
   - 
   - 
   - 

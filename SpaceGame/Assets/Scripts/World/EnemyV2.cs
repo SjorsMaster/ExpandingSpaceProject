@@ -6,7 +6,7 @@ public class EnemyV2 : MonoBehaviour {
 
     Animator m_Animator;
 
-    public int Speed;
+    public float Speed;
     public Transform Player;
 
     private bool flipped;
@@ -20,10 +20,10 @@ public class EnemyV2 : MonoBehaviour {
         m_Animator = gameObject.GetComponent<Animator>();
     }
 
-    void Update () {
+    void FixedUpdate () {
             if (Player != null)//<Shailesh??
             {
-                transform.Translate(Vector2.right * Speed * Time.deltaTime);//<Shailesh??
+                transform.Translate(Vector2.right * Speed);//<Shailesh??
             }
             if(Player == null)
             {
@@ -32,7 +32,7 @@ public class EnemyV2 : MonoBehaviour {
 
         if (flipped)//Als omgedraait
         {
-            Timer =+ 1 * Time.deltaTime;//Tel tijd op       
+            Timer++;//Tel tijd op       
         }
         if (Timer >= 10)//Als tijd boven 10 MS zit
         {
