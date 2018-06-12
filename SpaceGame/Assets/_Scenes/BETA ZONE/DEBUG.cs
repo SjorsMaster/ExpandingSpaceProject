@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class DEBUG : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class DEBUG : MonoBehaviour
     public GameObject LoadLevel;
     private bool cheats;
     int inputC;
+    int Speedor;
     private string stripped;
 
     public bool GodModus;
@@ -58,6 +60,17 @@ public class DEBUG : MonoBehaviour
 
         if (cheats)
         {
+            if (mainInputField.text.ToString().Contains("setspeed") && Input.GetKey(KeyCode.Return))
+            {
+                stripped = mainInputField.text.ToString().Replace("setspeed ", "");
+                Speedor = Int32.Parse(stripped);
+                Time.timeScale = Speedor;
+                if (Speedor > 100 || Speedor < 0)
+                {
+                    Logs.text = "[" + System.DateTime.Now + "]:\n" + "Error, Invalid value.\n" + Logs.text;
+                }
+
+            }
 
             if (mainInputField.text.ToString().Contains("changelevel") && Input.GetKey(KeyCode.Return))
             {
