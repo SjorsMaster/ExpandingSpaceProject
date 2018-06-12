@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 
-public class DEBUG : MonoBehaviour
+public class DebugScript : MonoBehaviour
 {
 
     public InputField mainInputField;
