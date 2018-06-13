@@ -117,10 +117,11 @@ MonoBehaviour:
   GameOver: 0
   ItemsLeft: {fileID: 0}
   ShowHolding: {fileID: 0}
-  GodMD: {fileID: 0}
   cooldown: {fileID: 0}
+  RocketState: 0
   HaveToCollect: 5
   left: 5
+  SelectedSkin: 0
   WalkSpeed: 0.1
   Speed: 0.15
   Timer: 1
@@ -132,6 +133,8 @@ MonoBehaviour:
   raketGemaakt: {fileID: 1159798639695094, guid: 2e7d995e119d1344386dfeb664daecd7,
     type: 2}
   raketKapot: {fileID: 0}
+  pickup: {fileID: 0}
+  jump: {fileID: 0}
 --- !u!212 &212265325397593068
 SpriteRenderer:
   m_ObjectHideFlags: 1
