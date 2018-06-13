@@ -107,7 +107,7 @@ public class Player : MonoBehaviour
             IntJumper = 0;//IntJumper 0?
         }
 
-        if (other.gameObject.tag == "Enemy" && !GODMODE)
+        if (other.gameObject.tag == "Enemy" &&  !GODMODE)
         {
             Death();//START DEATH FUNCTION
         }
@@ -159,6 +159,14 @@ public class Player : MonoBehaviour
     
     void FixedUpdate()
     {
+
+        if (GameObject.Find("Debugger(Clone)") != null)
+        {
+            fly = (GameObject.Find("Debugger(Clone)").GetComponent<DebugScript>().FlyModus);
+            GODMODE = (GameObject.Find("Debugger(Clone)").GetComponent<DebugScript>().GodModus);
+        }
+
+
         //RocketState\\
         if (RocketState == 1)
         {
