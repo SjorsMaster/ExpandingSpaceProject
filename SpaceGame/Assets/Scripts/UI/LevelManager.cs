@@ -23,6 +23,7 @@ public class LevelManager : MonoBehaviour {
     }
 
 	public void QuitRequest(){
+        Debug.Log("requist");
 		Application.Quit();
 	}
 }
