@@ -72,7 +72,7 @@ public class DebugScript : MonoBehaviour
 
             }
 
-            if (mainInputField.text.ToString().Contains("changelevel") && Input.GetKey(KeyCode.Return))
+            else if (mainInputField.text.ToString().Contains("changelevel") && Input.GetKey(KeyCode.Return))
             {
                 stripped = mainInputField.text.ToString().Replace("changelevel ", "");
                 if (Application.CanStreamedLevelBeLoaded(stripped))
@@ -85,7 +85,7 @@ public class DebugScript : MonoBehaviour
                 }
 
             }
-            if (mainInputField.text.ToString().Contains("spawn") && Input.GetKey(KeyCode.Return))
+            else if (mainInputField.text.ToString().Contains("spawn") && Input.GetKey(KeyCode.Return))
             {
                 stripped = mainInputField.text.ToString().Replace("spawn ", "");
                 GameObject instance = Resources.Load(stripped, typeof(GameObject)) as GameObject;
@@ -100,7 +100,7 @@ public class DebugScript : MonoBehaviour
                 }
             }
 
-            if (mainInputField.text.ToString().Contains("godmode") && Input.GetKey(KeyCode.Return))
+            else if (mainInputField.text.ToString().Contains("godmode") && Input.GetKey(KeyCode.Return))
             {
                 stripped = mainInputField.text.ToString().Replace("godmode ", "");
                 if (stripped == "true" || stripped == "1" || stripped == "on")
@@ -114,7 +114,7 @@ public class DebugScript : MonoBehaviour
                     FlyModus = false;
                 }
             }
-            if (mainInputField.text.ToString().Contains("fly") && Input.GetKey(KeyCode.Return))
+            else if (mainInputField.text.ToString().Contains("fly") && Input.GetKey(KeyCode.Return))
             {
                 stripped = mainInputField.text.ToString().Replace("fly ", "");
                 if (stripped == "true" || stripped == "1" || stripped == "on")
@@ -127,6 +127,11 @@ public class DebugScript : MonoBehaviour
                     Logs.text = "[" + System.DateTime.Now + "]:\n" + "Fly now has been disabled.\n" + Logs.text;
                     FlyModus = false;
                 }
+            }
+            else
+            {
+                Logs.text = "[" + System.DateTime.Now + "]:\n" + "Unknown command.\n" + Logs.text;
+
             }
 
         }

@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/BETA ZONE/Achievements.unity
     guid: 901982d1143e55f4a863bc2aea5c97d6
+  - enabled: 1
+    path: Assets/_Scenes/BETA ZONE/TestOverWorld.unity
+    guid: 3bdedbf8778ca8b4ab8ec2c730f0e747
   m_configObjects: {}

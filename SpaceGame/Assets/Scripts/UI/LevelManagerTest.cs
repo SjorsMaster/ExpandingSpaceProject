@@ -9,55 +9,72 @@ public class LevelManagerTest : MonoBehaviour {
     bool loadstate = false;
     bool go = false;
     public Image LoadImage;
-    public float TransitionSpeed = 1.0f;
+    public float TransitionSpeed = 0.5f;
+    public float GoalAmmount = 1;
 
-    public void LoadLevel (string name){
+    public bool bLoadLevel = false;
+    public bool bInstantLoad = false;
+    public bool bRestartLevel = false;
+    public bool bQuitRequest = false;
+
+    public string StageName;
+
+    public void LoadLevel (string nameLevel){
+        StageName = nameLevel;
         go = true;
-        if (loadstate)
-        {
-            PlayerPrefs.SetString("Level", name);
-            SceneManager.LoadScene("Loading");
-        }
-	}
+        bLoadLevel = true;
+    }
 
-    public void InstantLoad(string name)
+    public void InstantLoad(string nameLevel)
     {
+        StageName = nameLevel;
         go = true;
-        if (loadstate)
-        {
-            SceneManager.LoadScene(name);
-        }
+        bInstantLoad = true;
     }
 
     public void RestartLevel()
     {
         go = true;
-        if (loadstate)
-        {
-            string LevelReset = PlayerPrefs.GetString("StageRestart", "Menu");//Slaat stage op. anders menu
-            PlayerPrefs.SetString("Level", LevelReset);//Geeft volgende level mee
-            SceneManager.LoadScene("Loading");//Laad loading level
-        }
+        bRestartLevel = true;
     }
 
-	public void QuitRequest(){
+	public void QuitRequest()
+    {
         go = true;
-        if (loadstate)
-        {
-            Debug.Log("requist");
-            Application.Quit();
-        }
+        bQuitRequest = true;
 	}
 
     void Update()
     {
         if (go)
         {
-            LoadImage.fillAmount -= 1.0f / TransitionSpeed * Time.deltaTime;
-            if (LoadImage.fillAmount == 0)
+            LoadImage.fillAmount += 1.0f / TransitionSpeed * Time.deltaTime;
+            if (LoadImage.fillAmount == GoalAmmount)
             {
-                Destroy(LoadImage);
                 loadstate = true;
+            }
+        }
+        if (loadstate)
+        {
+            if (bLoadLevel)
+            {
+                PlayerPrefs.SetString("Level", StageName);
+                SceneManager.LoadScene("Loading");
+            }
+            else if (bInstantLoad)
+            {
+                SceneManager.LoadScene(StageName);
+            }
+            else if (bRestartLevel)
+            {
+                string LevelReset = PlayerPrefs.GetString("StageRestart", "Menu");//Slaat stage op. anders menu
+                PlayerPrefs.SetString("Level", LevelReset);//Geeft volgende level mee
+                SceneManager.LoadScene("Loading");//Laad loading level
+            }
+            else if (bQuitRequest)
+            {
+                Debug.Log("Lemme quit ;-;");
+                Application.Quit();
             }
         }
     }
