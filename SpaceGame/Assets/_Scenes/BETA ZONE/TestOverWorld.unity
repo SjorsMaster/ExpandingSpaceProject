@@ -2281,7 +2281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadein: {fileID: 1585710895}
-  TransitionSpeed: 0.35
+  TransitionSpeed: 0.25
 --- !u!1 &1660827662
 GameObject:
   m_ObjectHideFlags: 0
@@ -2434,7 +2434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadImage: {fileID: 245610989}
-  TransitionSpeed: 0.3
+  TransitionSpeed: 0.25
   GoalAmmount: 1
   bLoadLevel: 0
   bInstantLoad: 0
