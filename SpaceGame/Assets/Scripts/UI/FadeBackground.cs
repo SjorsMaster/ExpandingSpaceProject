@@ -10,7 +10,6 @@ public class FadeBackground : MonoBehaviour {
 
        // Update is called once per frame
     void Update() {
-           Debug.Log(Alphalevel);
            GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, Alphalevel);
 
            if (!flip)
