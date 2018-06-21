@@ -57,6 +57,7 @@ echo.
 SET /P _inputname= Would you like to Clone, Pull, Commit, Push, All-In-One(AIO) or Exit: 
 IF "%_inputname%"=="pull" GOTO :pull
 IF "%_inputname%"=="push" GOTO :push
+IF "%_inputname%"=="force" GOTO :force
 IF "%_inputname%"=="commit" GOTO :commit
 IF "%_inputname%"=="clone" GOTO :clone
 IF "%_inputname%"=="exit" GOTO :exit
@@ -244,6 +245,28 @@ echo.
 echo.
 pause
 goto :start
+
+:force
+color 1a
+@title Commit Tool 3.2 - Pulling..
+git pull %URL%
+@title Commit Tool 3.2
+echo.
+SET /P _inputname= { ! } What message would you like to add: 
+echo.
+git remote add origin %URL%
+@title Commit Tool 3.2 - Commiting..
+git commit -m "%_inputname%"
+@title Commit Tool 3.2
+git remote add origin %URL%
+@title Commit Tool 3.2 - Pushing..
+git push -u origin master --force
+echo.
+@title Commit Tool 3.2 - Done!
+echo [Done!]
+pause
+echo.
+goto :done
 
 
 :exit

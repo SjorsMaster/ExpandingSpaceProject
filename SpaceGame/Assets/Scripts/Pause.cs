@@ -42,6 +42,8 @@ public class Pause : MonoBehaviour {
         {
             canvasItems[i].SetActive(state);
         }
+        
+        
     }
 
     public void ButtonAction()
