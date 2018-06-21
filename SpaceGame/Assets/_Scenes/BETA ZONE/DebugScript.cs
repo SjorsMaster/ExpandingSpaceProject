@@ -128,10 +128,10 @@ public class DebugScript : MonoBehaviour
                     FlyModus = false;
                 }
             }
+
             else
             {
                 Logs.text = "[" + System.DateTime.Now + "]:\n" + "Unknown command.\n" + Logs.text;
-
             }
 
         }
