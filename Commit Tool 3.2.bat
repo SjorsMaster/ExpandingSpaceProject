@@ -57,7 +57,7 @@ echo.
 SET /P _inputname= Would you like to Clone, Pull, Commit, Push, All-In-One(AIO) or Exit: 
 IF "%_inputname%"=="pull" GOTO :pull
 IF "%_inputname%"=="push" GOTO :push
-IF "%_inputname%"=="force" GOTO :force
+IF "%_inputname%"=="ForceItNow" GOTO :force
 IF "%_inputname%"=="commit" GOTO :commit
 IF "%_inputname%"=="clone" GOTO :clone
 IF "%_inputname%"=="exit" GOTO :exit
