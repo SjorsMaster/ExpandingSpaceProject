@@ -9,7 +9,7 @@ public class LevelManagerTest : MonoBehaviour {
     bool loadstate = false;
     bool go = false;
     public Image LoadImage;
-    public float TransitionSpeed = 0.5f;
+    public float TransitionSpeed = 0.25f;
     public float GoalAmmount = 1;
 
     public bool bLoadLevel = false;
@@ -21,6 +21,7 @@ public class LevelManagerTest : MonoBehaviour {
 
     public void LoadLevel (string nameLevel){
         StageName = nameLevel;
+        Time.timeScale = 1;
         go = true;
         bLoadLevel = true;
     }

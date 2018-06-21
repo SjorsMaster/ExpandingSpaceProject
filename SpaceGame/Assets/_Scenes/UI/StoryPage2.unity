@@ -164,6 +164,7 @@ MonoBehaviour:
   fullText: '...Everything went horribly wrong.. Now Spacie has to go and collect
     all his spaceship parts to continue.. Good luck Spacie! (Press space) '
   Stage: Overworld
+  ClickToSkip: 1
 --- !u!114 &150452794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,9 +185,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 4354b7ec5966e3e42bb1d8b3051b3c89, type: 3}
-    m_FontSize: 27
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: 36c7acec808253b4792d5cf647113177, type: 3}
+    m_FontSize: 17
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
