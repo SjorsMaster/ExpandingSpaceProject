@@ -31,10 +31,10 @@ public class AchievementPopup : MonoBehaviour
     {
         ///string oof = PlayerPrefs.GetInt(Achievement[], 0);
         ///
-        if (PlayerPrefs.GetInt("MoonJumper", 0) == 1000)
+        if (PlayerPrefs.GetInt("MoonJumper", 0) == 100)
         {
             GoUp("Moon jumper");
-            PlayerPrefs.SetInt("MoonJumper", 2000);
+            PlayerPrefs.SetInt("MoonJumper", 200);
         }
         if (PlayerPrefs.GetInt("Sowemeetagain", 0) == 1)
         {

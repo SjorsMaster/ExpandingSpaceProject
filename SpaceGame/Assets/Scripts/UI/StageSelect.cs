@@ -6,12 +6,15 @@ using UnityEngine.SceneManagement;
 
 
 public class StageSelect : MonoBehaviour {
-    
+
+    public Image DotLine;
     public Button b;//Dit
     public Button c;//Zijn
     public Button d;//De
     public Button e;//Knoppen
     public int SceneSeen;
+
+
 
     private int Completed;//Zie aantal behaalde levels
 
@@ -30,6 +33,7 @@ public class StageSelect : MonoBehaviour {
     void Update () {
         Completed = PlayerPrefs.GetInt("Completed", 0);
 
+        DotLine.fillAmount = Completed / 10f;
 
         if (Completed >= 1 && !b.interactable)//Kijk of het aantal benodigde levels gehaald overeenkomt
         {

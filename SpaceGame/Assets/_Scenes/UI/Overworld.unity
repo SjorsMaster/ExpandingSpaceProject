@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f68cf4618a555e4a80d4e8b64f5bbc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DotLine: {fileID: 378849257}
   b: {fileID: 862472650}
   c: {fileID: 1660827664}
   d: {fileID: 429813540}
@@ -652,7 +653,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.37
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 2
 --- !u!222 &378849258
