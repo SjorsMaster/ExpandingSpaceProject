@@ -21,7 +21,6 @@ public class Pause : MonoBehaviour {
         
         if (Input.GetKeyDown("escape"))
         {
-            Debug.Log(Time.timeScale);
             if (trigger == true)
             {
                 Time.timeScale = 0;
