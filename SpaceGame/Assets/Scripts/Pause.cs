@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Pause : MonoBehaviour {
 
     public GameObject[] canvasItems;
+    public GameObject Player;
     bool trigger = true;
 
     private void Start()
@@ -18,19 +19,22 @@ public class Pause : MonoBehaviour {
 
     private void Update()
     {
-        
-        if (Input.GetKeyDown("escape"))
+        if (Player != null)
         {
-            if (trigger == true)
+            if (Input.GetKeyDown("escape"))
             {
-                Time.timeScale = 0;
-                Toggle(true);
-                trigger = false;
-            }
-            else if (trigger == false) { 
-                Time.timeScale = 1;
-                Toggle(false);
-                trigger = true;
+                if (trigger == true)
+                {
+                    Time.timeScale = 0;
+                    Toggle(true);
+                    trigger = false;
+                }
+                else if (trigger == false)
+                {
+                    Time.timeScale = 1;
+                    Toggle(false);
+                    trigger = true;
+                }
             }
         }
     }

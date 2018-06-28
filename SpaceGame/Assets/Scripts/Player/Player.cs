@@ -313,8 +313,8 @@ public class Player : MonoBehaviour
 
     private void Win()//Als gewonnnen word aangeroepen
     {
-        Instantiate(raketGemaakt, new Vector2(-7, -2.5f), Quaternion.identity);//Spawnt gerepareerde raket
-        Instantiate(win, new Vector2(-6.93f, 0.37f), Quaternion.identity);//Spawnt win karakter.
+        Instantiate(raketGemaakt, new Vector2(-6, -2f), Quaternion.identity);//Spawnt gerepareerde raket
+        Instantiate(win, new Vector2(-5.93f, 1f), Quaternion.identity);//Spawnt win karakter.
         Destroy(raketKapot);//Gooit kappotte raket weg.
         if (StageID > Completed)//Kijkt of er een hoger level is behaald dan deze (Voor savegame progress)
         {//Zo niet
