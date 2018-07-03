@@ -61,6 +61,8 @@ public class Player : MonoBehaviour
     public float Timer; //Level tijdslimiet(Zuurstof)
     public float MinTime = 1; //Minimale tijdslimiet
 
+    public float Teller = 0;
+
 
     /*<------GAMEOBJECTS------>*/
     
@@ -118,6 +120,7 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.tag == "Collectable" && !holding) //Als object verzamelbaar is en speler niets vast heeft.
         {
+            PlayerPrefs.SetInt("Collector", PlayerPrefs.GetInt("Collector", 0) + 1);
             pickup.Play();
             Instantiate(confirm, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity); //Geeft confirmation effect op speler.
             holding = true; //Zet vasthouden op waar.
@@ -159,6 +162,8 @@ public class Player : MonoBehaviour
     
     void FixedUpdate()
     {
+
+        Teller += Time.deltaTime;
 
         if (GameObject.Find("Debugger(Clone)") != null)
         {
@@ -313,6 +318,10 @@ public class Player : MonoBehaviour
 
     private void Win()//Als gewonnnen word aangeroepen
     {
+        if (PlayerPrefs.GetInt("GottaGoFAST", 0) == 0 && Teller <= 30)
+        {
+            PlayerPrefs.SetInt("GottaGoFAST", 1);
+        }
         Instantiate(raketGemaakt, new Vector2(-6, -2f), Quaternion.identity);//Spawnt gerepareerde raket
         Instantiate(win, new Vector2(-5.93f, 1f), Quaternion.identity);//Spawnt win karakter.
         Destroy(raketKapot);//Gooit kappotte raket weg.

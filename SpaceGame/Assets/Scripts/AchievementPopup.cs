@@ -33,13 +33,13 @@ public class AchievementPopup : MonoBehaviour
         ///
         if (PlayerPrefs.GetInt("MoonJumper", 0) == 100)
         {
-            GoUp("Moon jumper");
             PlayerPrefs.SetInt("MoonJumper", 200);
+            GoUp("Moon jumper");
         }
         if (PlayerPrefs.GetInt("Sowemeetagain", 0) == 1)
         {
-            GoUp("So we meet again");
             PlayerPrefs.SetInt("Sowemeetagain", 2);
+            GoUp("So we meet again");
         }
         if (PlayerPrefs.GetInt("GetFucked", 0) == 1)
         {
@@ -50,6 +50,16 @@ public class AchievementPopup : MonoBehaviour
         {
             PlayerPrefs.SetInt("HACKER", 2);
             GoUp("Dirty hacker");
+        }
+        if (PlayerPrefs.GetInt("GottaGoFAST", 0) == 1)
+        {
+            PlayerPrefs.SetInt("GottaGoFAST", 2);
+            GoUp("Gotta go FAST!");
+        }
+        if (PlayerPrefs.GetInt("Collector", 0) == 100)
+        {
+            PlayerPrefs.SetInt("Collector", 200);
+            GoUp("Collector");
         }
         /*if (Reset)
         {
