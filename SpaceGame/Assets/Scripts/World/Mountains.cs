@@ -8,15 +8,8 @@ public class Mountains : MonoBehaviour {
     public float yPos;
     public Transform player;//Locaties player
 
-    private int Toggle;
-
-    private void Start()
-    {
-        Toggle = PlayerPrefs.GetInt("TogglePalarax", 1);
-    }
-
     void FixedUpdate () {
-        if (Toggle == 1)
+        if (PlayerPrefs.GetInt("ToggleParalax", 1) == 1)
         {
             if (player)//Als speler bestaat
             {

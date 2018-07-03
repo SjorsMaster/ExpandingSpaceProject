@@ -20,13 +20,17 @@ public class TriggerEnterObjects : MonoBehaviour {
             if (other.tag == "Achievement" && PlayerPrefs.GetInt("GetFucked", 0) != 2)
             {
                 PlayerPrefs.SetInt("GetFucked", 1);
-                Instantiate(SpawnDust, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+                if (PlayerPrefs.GetInt("Particles", 1) == 1){
+                    Instantiate(SpawnDust, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+                }
                 Destroy(this.gameObject);
             }
         }
         if (other.tag == "Achievement")
         {
-            Instantiate(SpawnDust, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+            if (PlayerPrefs.GetInt("Particles", 1) == 1){
+                Instantiate(SpawnDust, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+            }
             Destroy(this.gameObject);
         }
     }

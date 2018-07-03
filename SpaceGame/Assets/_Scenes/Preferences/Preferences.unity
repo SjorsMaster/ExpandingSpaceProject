@@ -1567,7 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14aad996263ca2a41be6d60f9cb5a57b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CheckName: Achievements
+  CheckName: Particles
   Checkbox: {fileID: 1012828561}
 --- !u!1 &1246673283
 GameObject:

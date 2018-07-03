@@ -104,7 +104,9 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Ground")
         {
+            if (PlayerPrefs.GetInt("Particles", 1) == 1) { 
             Instantiate(dust, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity); //Maakt rookeffecten.
+            }
             MoonJumper = false;//Zet gesprongen op niet waar
             IntJumper = 0;//IntJumper 0?
         }
@@ -125,7 +127,9 @@ public class Player : MonoBehaviour
                 PlayerPrefs.SetInt("Collector", PlayerPrefs.GetInt("Collector", 0) + 1);
             }
             pickup.Play();
-            Instantiate(confirm, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity); //Geeft confirmation effect op speler.
+            if (PlayerPrefs.GetInt("Particles", 1) == 1){
+                Instantiate(confirm, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity); //Geeft confirmation effect op speler.
+            }
             holding = true; //Zet vasthouden op waar.
             ShowHolding.text = "Holding item!"; //Laat vasthouden op scherm zien.
             Destroy(other.gameObject); //Verwijder bestaan van verzamelbaar object, is niet meer nodig na oppakken.
@@ -140,7 +144,9 @@ public class Player : MonoBehaviour
             {
                 pickup.Play();
                 holding = false;//Zet vasthouden op nietwaar, want het is weggebracht.
-                Instantiate(confirm, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Creeert confrimatie effect.
+                if (PlayerPrefs.GetInt("Particles", 1) == 1){
+                    Instantiate(confirm, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Creeert confrimatie effect.
+                }
                 Collected++;//Telt op hoeveel er verzameld zijn.
                 RocketState++;
 
