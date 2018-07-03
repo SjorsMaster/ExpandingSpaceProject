@@ -45,6 +45,10 @@ public class DEBUG : MonoBehaviour
             stripped = mainInputField.text.ToString().Replace("cheatm ", "");
             if (stripped == "true" || stripped == "1" || stripped == "on")
             {
+                if (PlayerPrefs.GetInt("Cheater", 0) == 0)
+                {
+                    PlayerPrefs.SetInt("Cheater", 1);
+                }
                 cheats = true;
                 Logs.text = "[" + System.DateTime.Now + "]:\n" + "Cheats are now active.\n";
 

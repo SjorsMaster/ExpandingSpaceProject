@@ -16,8 +16,8 @@ public class AchievementPopup : MonoBehaviour
 
     private bool Active;
     //public bool Reset;//AchievementPopupTESTER
-                      //public float[] Achievement;
-
+    //public float[] Achievement;
+    bool go;
     bool WentTo;
     private int Timer;
 
@@ -29,65 +29,76 @@ public class AchievementPopup : MonoBehaviour
 
     void FixedUpdate()
     {
-        ///string oof = PlayerPrefs.GetInt(Achievement[], 0);
-        ///
-        if (PlayerPrefs.GetInt("MoonJumper", 0) == 100)
-        {
-            PlayerPrefs.SetInt("MoonJumper", 200);
-            GoUp("Moon jumper");
-        }
-        if (PlayerPrefs.GetInt("Sowemeetagain", 0) == 1)
-        {
-            PlayerPrefs.SetInt("Sowemeetagain", 2);
-            GoUp("So we meet again");
-        }
-        if (PlayerPrefs.GetInt("GetFucked", 0) == 1)
-        {
-            PlayerPrefs.SetInt("GetFucked", 2);
-            GoUp("You're fucked");
-        }
-        if (PlayerPrefs.GetInt("HACKER", 0) == 1)
-        {
-            PlayerPrefs.SetInt("HACKER", 2);
-            GoUp("Dirty hacker");
-        }
-        if (PlayerPrefs.GetInt("GottaGoFAST", 0) == 1)
-        {
-            PlayerPrefs.SetInt("GottaGoFAST", 2);
-            GoUp("Gotta go FAST!");
-        }
-        if (PlayerPrefs.GetInt("Collector", 0) == 100)
-        {
-            PlayerPrefs.SetInt("Collector", 200);
-            GoUp("Collector");
-        }
-        /*if (Reset)
-        {
-            PlayerPrefs.SetInt("MoonJumper", 999);
-        }*/
 
-
-
-        if (Active)
+        if (PlayerPrefs.GetInt("Achievements", 1) == 1)
         {
-            Timer++;
-            //Debug.Log(Timer);
-            if (transform.position != Ending.position && !WentTo)
+            ///string oof = PlayerPrefs.GetInt(Achievement[], 0);
+            ///
+            if (PlayerPrefs.GetInt("MoonJumper", 0) == 100)
             {
-                transform.position = Vector3.MoveTowards(transform.position, Ending.position, step);                
+                PlayerPrefs.SetInt("MoonJumper", 200);
+                GoUp("Moon jumper");
             }
-            if (transform.position == Ending.position && Timer >= 300)
+            if (PlayerPrefs.GetInt("Sowemeetagain", 0) == 1)
             {
-                WentTo = true;
+                PlayerPrefs.SetInt("Sowemeetagain", 2);
+                GoUp("So we meet again");
             }
-            if (WentTo)
+            if (PlayerPrefs.GetInt("GetFucked", 0) == 1)
+            {
+                PlayerPrefs.SetInt("GetFucked", 2);
+                GoUp("You're fucked");
+            }
+            if (PlayerPrefs.GetInt("HACKER", 0) == 1)
+            {
+                PlayerPrefs.SetInt("HACKER", 2);
+                GoUp("Dirty hacker");
+            }
+            if (PlayerPrefs.GetInt("GottaGoFAST", 0) == 1)
+            {
+                PlayerPrefs.SetInt("GottaGoFAST", 2);
+                GoUp("Gotta go FAST!");
+            }
+            if (PlayerPrefs.GetInt("Collector", 0) == 100)
+            {
+                PlayerPrefs.SetInt("Collector", 200);
+                GoUp("Collector");
+            }
+            if (PlayerPrefs.GetInt("Cheater", 0) == 1)
+            {
+                PlayerPrefs.SetInt("Cheater", 2);
+                GoUp("Cheater");
+            }
+            /*if (Reset)
+            {
+                PlayerPrefs.SetInt("MoonJumper", 999);
+            }*/
+
+
+
+            if (Active)
+            {
+                Timer++;
+                Debug.Log(Timer);
+                Debug.Log(go);
+                if(Timer >= 300)
+                {
+                    go = true;
+                }
+
+                if (transform.position != Ending.position && !go)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, Ending.position, step);
+                }
+            }
+
+            if (go)
             {
                 transform.position = Vector3.MoveTowards(transform.position, Starting.position, step);
-                if (transform.position == Starting.position)
+                if (transform.position == Starting.position || Timer >= 400)
                 {
-                    
                     Active = false;
-                    WentTo = false;
+                    go = false;
                     Timer = 0;
                 }
             }

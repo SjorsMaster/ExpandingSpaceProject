@@ -120,7 +120,10 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.tag == "Collectable" && !holding) //Als object verzamelbaar is en speler niets vast heeft.
         {
-            PlayerPrefs.SetInt("Collector", PlayerPrefs.GetInt("Collector", 0) + 1);
+            if (PlayerPrefs.GetInt("Achievements", 1) == 1)
+            {
+                PlayerPrefs.SetInt("Collector", PlayerPrefs.GetInt("Collector", 0) + 1);
+            }
             pickup.Play();
             Instantiate(confirm, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity); //Geeft confirmation effect op speler.
             holding = true; //Zet vasthouden op waar.
@@ -280,7 +283,10 @@ public class Player : MonoBehaviour
         {
             if (!MoonJumper)
             {
-                PlayerPrefs.SetInt("MoonJumper", PlayerPrefs.GetInt("MoonJumper", 0) + 1);
+                if (PlayerPrefs.GetInt("Achievements", 1) == 1)
+                {
+                    PlayerPrefs.SetInt("MoonJumper", PlayerPrefs.GetInt("MoonJumper", 0) + 1);
+                }
                 if (SelectedSkin == 0)
                 {
                     m_Animator.SetTrigger("Jump");
@@ -311,16 +317,22 @@ public class Player : MonoBehaviour
         {
             GameOver = true;//Gameover word op waar gezet, anders blijft het spawnen
         }
-        PlayerPrefs.SetInt("Deaths", PlayerPrefs.GetInt("Deaths", 0) + 1);
+        if (PlayerPrefs.GetInt("Achievements", 1) == 1)
+        {
+            PlayerPrefs.SetInt("Deaths", PlayerPrefs.GetInt("Deaths", 0) + 1);
+        }
         Instantiate(dead, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Spawnt dood karakter
         Destroy(this.gameObject);//Verwijderd speler.
     }
 
     private void Win()//Als gewonnnen word aangeroepen
     {
-        if (PlayerPrefs.GetInt("GottaGoFAST", 0) == 0 && Teller <= 30)
+        if (PlayerPrefs.GetInt("Achievements", 1) == 1)
         {
-            PlayerPrefs.SetInt("GottaGoFAST", 1);
+            if (PlayerPrefs.GetInt("GottaGoFAST", 0) == 0 && Teller <= 30)
+            {
+                PlayerPrefs.SetInt("GottaGoFAST", 1);
+            }
         }
         Instantiate(raketGemaakt, new Vector2(-6, -2f), Quaternion.identity);//Spawnt gerepareerde raket
         Instantiate(win, new Vector2(-5.93f, 1f), Quaternion.identity);//Spawnt win karakter.

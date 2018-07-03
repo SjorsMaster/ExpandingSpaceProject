@@ -17,19 +17,22 @@ public class AchievementChecker : MonoBehaviour
 
     void Awake()
     {
-        AchievementState = PlayerPrefs.GetInt(AchievementName.Replace(" ", string.Empty), 0);
+        if (PlayerPrefs.GetInt("Achievements", 1) == 1)
+        {
+            AchievementState = PlayerPrefs.GetInt(AchievementName.Replace(" ", string.Empty), 0);
 
-        if (AchievementState >= AchievementGoalNum && !IsExactNumber || AchievementState == AchievementGoalNum && IsExactNumber)
-        {
-            AchievementText.text = AchievementName + ": \n" +  IfGotText;
-            if (AlsoCreateObject)
+            if (AchievementState >= AchievementGoalNum && !IsExactNumber || AchievementState == AchievementGoalNum && IsExactNumber)
             {
-                Instantiate(CreateObject);
+                AchievementText.text = AchievementName + ": \n" + IfGotText;
+                if (AlsoCreateObject)
+                {
+                    Instantiate(CreateObject);
+                }
             }
-        }
-        else
-        {
-            AchievementText.text = AchievementName + ": \n" + HowToGet;
+            else
+            {
+                AchievementText.text = AchievementName + ": \n" + HowToGet;
+            }
         }
     }
 }

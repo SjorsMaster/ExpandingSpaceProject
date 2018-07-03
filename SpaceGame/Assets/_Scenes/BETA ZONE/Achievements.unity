@@ -384,7 +384,7 @@ RectTransform:
   - {fileID: 2045294897}
   - {fileID: 2135995573}
   m_Father: {fileID: 576967551}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -475,7 +475,7 @@ RectTransform:
   - {fileID: 2004669455}
   - {fileID: 887040344}
   m_Father: {fileID: 576967551}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -614,7 +614,7 @@ Prefab:
     - target: {fileID: 224176633143959256, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224176633143959256, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
@@ -669,7 +669,7 @@ Prefab:
     - target: {fileID: 114948512799133606, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
       propertyPath: m_Text
-      value: "EZ GAME: \nFinish the game without dying once"
+      value: Enable Achievements
       objectReference: {fileID: 0}
     - target: {fileID: 114397381200575038, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
@@ -862,7 +862,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1482845595}
   - {fileID: 1310555269}
   - {fileID: 349742328}
   - {fileID: 1313249656}
@@ -985,7 +984,7 @@ Prefab:
     - target: {fileID: 224176633143959256, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224176633143959256, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
@@ -1040,7 +1039,7 @@ Prefab:
     - target: {fileID: 114948512799133606, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
       propertyPath: m_Text
-      value: "Strange ritual: \nDie 666 times"
+      value: Enable Achievements
       objectReference: {fileID: 0}
     - target: {fileID: 114397381200575038, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
@@ -1302,7 +1301,7 @@ Prefab:
     - target: {fileID: 224176633143959256, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224176633143959256, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
@@ -1357,9 +1356,7 @@ Prefab:
     - target: {fileID: 114948512799133606, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
       propertyPath: m_Text
-      value: 'Adventure Over.
-
-        Finish the game.'
+      value: Enable Achievements
       objectReference: {fileID: 0}
     - target: {fileID: 114397381200575038, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
@@ -1605,7 +1602,7 @@ Prefab:
     - target: {fileID: 224176633143959256, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224176633143959256, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
@@ -1660,7 +1657,7 @@ Prefab:
     - target: {fileID: 114948512799133606, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
       propertyPath: m_Text
-      value: "Gotta Go FAST: \nFinish a level within 30 seconds."
+      value: Enable Achievements
       objectReference: {fileID: 0}
     - target: {fileID: 114397381200575038, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
@@ -1861,7 +1858,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.55
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2214,7 +2211,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.55
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2513,111 +2510,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1385020782
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 576967551}
-    m_Modifications:
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-        type: 2}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 8e48935cefdceff44a04307e43d615fa, type: 2}
-  m_IsPrefabParent: 0
---- !u!224 &1482845595 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224200679893759242, guid: 8e48935cefdceff44a04307e43d615fa,
-    type: 2}
-  m_PrefabInternal: {fileID: 1385020782}
 --- !u!1 &1621891852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,7 +2644,7 @@ Prefab:
     - target: {fileID: 224176633143959256, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224176633143959256, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
@@ -2807,7 +2699,7 @@ Prefab:
     - target: {fileID: 114948512799133606, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
       propertyPath: m_Text
-      value: "Get Fucked: \nMake an item become unobtainable"
+      value: Enable Achievements
       objectReference: {fileID: 0}
     - target: {fileID: 114397381200575038, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
@@ -2980,7 +2872,7 @@ Prefab:
     - target: {fileID: 224176633143959256, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224176633143959256, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
@@ -3035,8 +2927,7 @@ Prefab:
     - target: {fileID: 114948512799133606, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
       propertyPath: m_Text
-      value: "So we meet again: \nDon't play the game for 6 days, Return on the exact
-        day."
+      value: Enable Achievements
       objectReference: {fileID: 0}
     - target: {fileID: 114397381200575038, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
@@ -3361,7 +3252,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.6
-  m_Text: "Moon Jumper: \nJump 100 times."
+  m_Text: Enable Achievements
 --- !u!222 &2004669457
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3509,7 +3400,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.6
-  m_Text: "Item Collector: \nCollect 100 items."
+  m_Text: Enable Achievements
 --- !u!222 &2045294899
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3610,7 +3501,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.55
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

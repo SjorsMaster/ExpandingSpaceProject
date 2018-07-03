@@ -10,12 +10,16 @@ public class AchievementBar : MonoBehaviour {
     public int ProgressBar;
     public float OutOf;
 
-    void Update () {
-        ProgressBar = PlayerPrefs.GetInt(achievement, 0);
+    void Update()
+    {
+        if (PlayerPrefs.GetInt("Achievements", 1) == 1)
+        {
+            ProgressBar = PlayerPrefs.GetInt(achievement, 0);
 
-        float progress = Mathf.Clamp01(ProgressBar / OutOf);//
+            float progress = Mathf.Clamp01(ProgressBar / OutOf);//
 
-        slider.value = progress;// tekenen
+            slider.value = progress;// tekenen
+        }
     }
 	
 }

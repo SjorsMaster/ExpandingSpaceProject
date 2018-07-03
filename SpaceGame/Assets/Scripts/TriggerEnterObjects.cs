@@ -14,11 +14,15 @@ public class TriggerEnterObjects : MonoBehaviour {
 
     private void OnTriggerEnter2D()
     {
-        if (other.tag == "Achievement" && PlayerPrefs.GetInt("GetFucked", 0) != 2)
+
+        if (PlayerPrefs.GetInt("Achievements", 1) == 1)
         {
-            PlayerPrefs.SetInt("GetFucked", 1);
-            Instantiate(SpawnDust, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
-            Destroy(this.gameObject);
+            if (other.tag == "Achievement" && PlayerPrefs.GetInt("GetFucked", 0) != 2)
+            {
+                PlayerPrefs.SetInt("GetFucked", 1);
+                Instantiate(SpawnDust, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+                Destroy(this.gameObject);
+            }
         }
         if (other.tag == "Achievement")
         {
