@@ -207,6 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CheckName: ToggleParalax
   Checkbox: {fileID: 21810324}
+  Swap: 0
 --- !u!1 &27274478
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -120, y: -118.100006}
+  m_AnchoredPosition: {x: -119.5, y: -113.600006}
   m_SizeDelta: {x: 89.77, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &33646046
@@ -535,7 +536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.3980001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 151.70438, y: -101.9}
+  m_AnchoredPosition: {x: 151.70438, y: -96}
   m_SizeDelta: {x: 176, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &58900315
@@ -2394,6 +2395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CheckName: Achievements
   Checkbox: {fileID: 827644765}
+  Swap: 0
 --- !u!1 &851196092
 GameObject:
   m_ObjectHideFlags: 0
@@ -2488,6 +2490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CheckName: FullScreen
   Checkbox: {fileID: 851196094}
+  Swap: 1
 --- !u!1 &915289201
 GameObject:
   m_ObjectHideFlags: 0
@@ -3040,6 +3043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CheckName: Particles
   Checkbox: {fileID: 1012828561}
+  Swap: 0
 --- !u!1 &1124819334
 GameObject:
   m_ObjectHideFlags: 0
@@ -3074,7 +3078,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169.6, y: -116.4}
+  m_AnchoredPosition: {x: -169.1, y: -111.9}
   m_SizeDelta: {x: 1025.3, y: 252.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1124819336
@@ -3376,7 +3380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1}
+  m_AnchoredPosition: {x: 0.2, y: 6.9}
   m_SizeDelta: {x: 160, y: 102.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1257393152
@@ -3581,6 +3585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CheckName: ToggleStars
   Checkbox: {fileID: 1314242963}
+  Swap: 0
 --- !u!1 &1315176188
 GameObject:
   m_ObjectHideFlags: 0

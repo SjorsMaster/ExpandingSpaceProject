@@ -8,8 +8,13 @@ public class CheckBoxChecker : MonoBehaviour {
 
     public string CheckName;
     public Toggle Checkbox;
+    public bool Swap;
 	// Use this for initialization
 	void Start () {
+        if (Swap)
+        {
+            PlayerPrefs.SetInt(CheckName, PlayerPrefs.GetInt(CheckName, 0));
+        }
         if (PlayerPrefs.GetInt(CheckName, 1) == 1) {
             Checkbox.isOn = true;
         }
@@ -17,8 +22,6 @@ public class CheckBoxChecker : MonoBehaviour {
         {
             Checkbox.isOn = false;
         }
-
-
     }
 	
 	// Update is called once per frame
