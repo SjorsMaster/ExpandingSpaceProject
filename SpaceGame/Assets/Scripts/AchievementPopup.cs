@@ -29,11 +29,10 @@ public class AchievementPopup : MonoBehaviour
 
     void FixedUpdate()
     {
-
         if (PlayerPrefs.GetInt("Achievements", 1) == 1)
-        {
-            ///string oof = PlayerPrefs.GetInt(Achievement[], 0);
-            ///
+            {
+            PlayerPrefs.SetInt("AchievementOn", 2);
+            GoUp("Achievements!");
             if (PlayerPrefs.GetInt("MoonJumper", 0) == 100)
             {
                 PlayerPrefs.SetInt("MoonJumper", 200);
@@ -79,8 +78,6 @@ public class AchievementPopup : MonoBehaviour
             if (Active)
             {
                 Timer++;
-                Debug.Log(Timer);
-                Debug.Log(go);
                 if(Timer >= 300)
                 {
                     go = true;
