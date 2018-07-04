@@ -364,7 +364,7 @@ public class Player : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("Achievements", 1) == 1)
         {
-            PlayerPrefs.SetInt("Deaths", PlayerPrefs.GetInt("Deaths", 0) + 1);
+            PlayerPrefs.SetInt("Strangeritual", PlayerPrefs.GetInt("Strangeritual", 0) + 1);
         }
         
         if(SelectedSkin == 0)
