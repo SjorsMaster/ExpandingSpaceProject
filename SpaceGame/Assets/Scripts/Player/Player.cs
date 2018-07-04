@@ -400,7 +400,7 @@ public class Player : MonoBehaviour
             Instantiate(deadRood, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Spawnt dood karakter
             Debug.Log(SelectedSkin);
         }
-        if (SelectedSkin == 2)
+        if (SelectedSkin == 3)
         {
             Instantiate(deadGrijs, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Spawnt dood karakter
             Debug.Log(SelectedSkin);
