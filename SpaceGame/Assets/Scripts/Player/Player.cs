@@ -66,7 +66,8 @@ public class Player : MonoBehaviour
 
 
     /*<------GAMEOBJECTS------>*/
-    
+
+    public GameObject deadBlauw; //Speler, DOOD
     public GameObject dead; //Speler, DOOD
     public GameObject win; //Speler, GEWONNEN
     public GameObject dust; //Rook wolken
@@ -92,6 +93,11 @@ public class Player : MonoBehaviour
 
         //AudioSource audio = GetComponent<AudioSource>();
         m_Animator = GetComponent<Animator>();//Vind de animator van het object.
+        if (SelectedSkin == 1)
+        {
+            m_Animator.SetTrigger("JumpBlauw");
+            //m_Animator.SetInteger("WalkJumpIdleBlauw", 0);
+        }
         CurrentStage = SceneManager.GetActiveScene().name;//Haal scene naam op.
         PlayerPrefs.SetString("StageRestart", CurrentStage);//Slaat huidige level op voor restart.
         StageID = int.Parse(SceneManager.GetActiveScene().name); //Haal huidige level naam op, En zet om tot een Int. \\Creert errors in levels zonder int.
@@ -226,6 +232,10 @@ public class Player : MonoBehaviour
             {
                 m_Animator.SetInteger("WalkJumpIdle", 1);
             }
+            if (SelectedSkin == 1)
+            {
+                m_Animator.SetInteger("WalkJumpIdleBlauw", 1);
+            }
 
         }
 
@@ -243,10 +253,6 @@ public class Player : MonoBehaviour
             //m_Animator.SetInteger("WalkJumpIdle", 1);
             transform.rotation = Quaternion.Euler(0, 180f, 0);
             transform.Translate(new Vector2(0.8f, 0) * WalkSpeed);//Beweegt karakter heen en weer.
-        }
-        if (Input.GetKeyDown("space"))
-        {
-
         }
         //float x = Input.GetAxis("Horizontal");//Haalt speler's links rechts beweging op.
         //transform.Translate(new Vector2(x, 0) * WalkSpeed);//Beweegt karakter heen en weer.
@@ -267,14 +273,12 @@ public class Player : MonoBehaviour
             {
                 m_Animator.SetInteger("WalkJumpIdle", 0);
             }
+            if (SelectedSkin == 1)
+            {
+                m_Animator.SetInteger("WalkJumpIdleBlauw", 0);
+            }
 
         }
-        if (Input.GetKeyUp("space"))
-        {
-            //m_Animator.SetInteger("WalkJumpIdle", 0);
-
-        }
-
 
         Timer--;//Telt de timer af
         if (Timer == 0)//kijkt of de timer op 0 staat
@@ -309,6 +313,10 @@ public class Player : MonoBehaviour
                 {
                     m_Animator.SetTrigger("Jump");
                 }
+                if (SelectedSkin == 1)
+                {
+                    m_Animator.SetTrigger("JumpBlauw");
+                }
                 landing = false;
                 jump.Play();
                 Counter = 0;//Zet jump counter op 0?
@@ -340,7 +348,15 @@ public class Player : MonoBehaviour
         {
             PlayerPrefs.SetInt("Deaths", PlayerPrefs.GetInt("Deaths", 0) + 1);
         }
-        Instantiate(dead, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Spawnt dood karakter
+        
+        if(SelectedSkin == 0)
+        {
+            Instantiate(dead, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Spawnt dood karakter
+        }
+        if(SelectedSkin == 1)
+        {
+            Instantiate(deadBlauw, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Spawnt dood karakter
+        }
         Destroy(this.gameObject);//Verwijderd speler.
     }
 
