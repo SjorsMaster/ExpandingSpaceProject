@@ -67,6 +67,8 @@ public class Player : MonoBehaviour
 
     /*<------GAMEOBJECTS------>*/
 
+    public GameObject deadGrijs;
+    public GameObject winGrijs;
     public GameObject deadRood;
     public GameObject deadBlauw; //Speler, DOOD
     public GameObject dead; //Speler, DOOD
@@ -398,6 +400,11 @@ public class Player : MonoBehaviour
             Instantiate(deadRood, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Spawnt dood karakter
             Debug.Log(SelectedSkin);
         }
+        if (SelectedSkin == 2)
+        {
+            Instantiate(deadGrijs, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Spawnt dood karakter
+            Debug.Log(SelectedSkin);
+        }
         Destroy(this.gameObject);//Verwijderd speler.
     }
 
@@ -422,6 +429,10 @@ public class Player : MonoBehaviour
         if (SelectedSkin == 2)
         {
             Instantiate(winRood, new Vector2(-5.93f, 1f), Quaternion.identity);//Spawnt win karakter.
+        }
+        if (SelectedSkin == 2)
+        {
+            Instantiate(winGrijs, new Vector2(-5.93f, 1f), Quaternion.identity);//Spawnt win karakter.
         }
 
         Destroy(raketKapot);//Gooit kappotte raket weg.

@@ -12,6 +12,11 @@ public class SelectSkin : MonoBehaviour {
         anim = player.GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+        randomSkinner();
+    }
+
     public void onClick(int SkinNumber)
     {
         PlayerPrefs.SetInt("Skin", SkinNumber);
@@ -22,7 +27,6 @@ public class SelectSkin : MonoBehaviour {
         if (PlayerPrefs.GetInt("Skin") == 0)
         {
             anim.SetInteger("Skin", 0);
-            Debug.Log("Dit doet niks?");
         }
         if (PlayerPrefs.GetInt("Skin") == 1)
         {
@@ -34,7 +38,7 @@ public class SelectSkin : MonoBehaviour {
         }
         if (PlayerPrefs.GetInt("Skin") == 3)
         {
-            //Animator
+            anim.SetInteger("Skin", 3);
         }
     }
 }
