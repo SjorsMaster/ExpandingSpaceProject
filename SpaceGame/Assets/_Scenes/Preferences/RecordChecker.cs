@@ -6,6 +6,6 @@ using UnityEngine.UI;
 public class RecordChecker : MonoBehaviour {
     public Text text;
 	void Start () {
-        text.text = PlayerPrefs.GetString("Record", "No record yet.").ToString();
+        text.text = PlayerPrefs.GetString("Record", "No record yet.");
     }
 }
