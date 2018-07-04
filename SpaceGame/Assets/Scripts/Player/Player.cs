@@ -104,6 +104,10 @@ public class Player : MonoBehaviour
         {
             m_Animator.SetTrigger("JumpRood");
         }
+        if (SelectedSkin == 3)
+        {
+            m_Animator.SetTrigger("JumpGrijs");
+        }
         CurrentStage = SceneManager.GetActiveScene().name;//Haal scene naam op.
         PlayerPrefs.SetString("StageRestart", CurrentStage);//Slaat huidige level op voor restart.
         StageID = int.Parse(SceneManager.GetActiveScene().name); //Haal huidige level naam op, En zet om tot een Int. \\Creert errors in levels zonder int.
@@ -246,6 +250,10 @@ public class Player : MonoBehaviour
             {
                 m_Animator.SetInteger("WalkJumpIdleRood", 1);
             }
+            if (SelectedSkin == 3)
+            {
+                m_Animator.SetInteger("WalkJumpIdleGrijs", 1);
+            }
 
         }
 
@@ -291,6 +299,10 @@ public class Player : MonoBehaviour
             {
                 m_Animator.SetInteger("WalkJumpIdleRood", 0);
             }
+            if (SelectedSkin == 3)
+            {
+                m_Animator.SetInteger("WalkJumpIdleGrijs", 0);
+            }
 
         }
 
@@ -334,6 +346,10 @@ public class Player : MonoBehaviour
                 if (SelectedSkin == 2)
                 {
                     m_Animator.SetTrigger("JumpRood");
+                }
+                if (SelectedSkin == 3)
+                {
+                    m_Animator.SetTrigger("JumpGrijs");
                 }
                 landing = false;
                 jump.Play();
