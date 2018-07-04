@@ -8,50 +8,40 @@ public class Speedruntimer : MonoBehaviour
 {
     public float PassedTime;
     private bool time;
-    private string Scene;
+    private Scene Scene;
     public Text Text;
-    void Speedrunner()
+
+    public void Speedrunner()
     {
+        PlayerPrefs.SetInt("Seen", 0);
         time = true;
         DontDestroyOnLoad(this.gameObject);
     }
 
     private void Update()
     {
-        Updates();
-    }
-
-    private IEnumerator Updates()
-    {
         if (time)
         {
-            Text.text = "" + PassedTime;
-            Scene = SceneManager.GetActiveScene().ToString();
-            if (Scene != "Menu" || Scene != "Loading" || Scene != "Achievements" || Scene != "Preferences" || Scene != "Overworld" || Scene != "Reset")
+            Text.text = "" + PassedTime.ToString("F2");
+            Scene = SceneManager.GetActiveScene();
+            Debug.Log(Scene);
+            if (Scene.name != "Loading" && Scene.name != "Achievements" && Scene.name != "Preferences" && Scene.name != "Overworld" && Scene.name != "Reset")
             {
                 PassedTime += Time.deltaTime;
             }
-            else if (Scene == "Ending")
+            else if (Scene.name == "Ending")
             {
-                Text.text = "" + PassedTime;
-                yield return new WaitForSeconds(1);
-                Text.text = "";
-                yield return new WaitForSeconds(0.2f);
-                Text.text = "" + PassedTime;
-                yield return new WaitForSeconds(1);
-                Text.text = "";
-                yield return new WaitForSeconds(0.2f);
-                Text.text = "" + PassedTime;
-                yield return new WaitForSeconds(1);
-                Text.text = "";
-                yield return new WaitForSeconds(0.2f);
-                Text.text = "" + PassedTime;
-                yield return new WaitForSeconds(1);
+                Text.text = "" + PassedTime.ToString("F2");
                 if (PlayerPrefs.GetFloat("Speedrun", 10000000000000000000) > PassedTime)
                 {
                     PlayerPrefs.SetFloat("Speedrun", PassedTime);
-                    PlayerPrefs.SetString("SpeedrunName", PlayerPrefs.GetString("Player"));
+                    PlayerPrefs.SetString("SpeedrunName", PlayerPrefs.GetString("Player","Player"));
+                    PlayerPrefs.SetString("Record", "Current Record: " + PlayerPrefs.GetString("SpeedrunName", "error") + " - " + PlayerPrefs.GetFloat("Speedrun", 10000000000000000000) + " seconds.");
                 }
+            }
+            if(Scene.name != "Menu" && PassedTime > 0.01f)
+            {
+                Destroy(this.gameObject);
             }
         }
     }
