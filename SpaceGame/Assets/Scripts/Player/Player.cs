@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     private bool MovingL;
     private bool MovingR;
     private bool fly;
+    private bool landing;
 
     public bool GODMODE;
     public bool GameOver; //Kijken of het spel al over is.
@@ -83,6 +84,7 @@ public class Player : MonoBehaviour
 
     public AudioSource pickup;
     public AudioSource jump;
+    private bool preparedone;
 
     void Start()
     {
@@ -106,6 +108,11 @@ public class Player : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("Particles", 1) == 1) { 
             Instantiate(dust, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity); //Maakt rookeffecten.
+            }
+            if (!landing)
+            {
+                landing = true;
+                m_Animator.SetTrigger("Land");
             }
             MoonJumper = false;//Zet gesprongen op niet waar
             IntJumper = 0;//IntJumper 0?
@@ -219,7 +226,7 @@ public class Player : MonoBehaviour
             {
                 m_Animator.SetInteger("WalkJumpIdle", 1);
             }
-        
+
         }
 
         if(Input.GetKey("right"))
@@ -239,6 +246,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown("space"))
         {
+
         }
         //float x = Input.GetAxis("Horizontal");//Haalt speler's links rechts beweging op.
         //transform.Translate(new Vector2(x, 0) * WalkSpeed);//Beweegt karakter heen en weer.
@@ -279,7 +287,11 @@ public class Player : MonoBehaviour
         {
             Death();//Voert de dood uit
         }
-        
+        if (cooldown.fillAmount <= 0.2)//Kijkt of de tijd op is
+        {
+            //instantiate text
+        }
+
         if (this.gameObject.transform.position.y <= -4.031514f)//Als speler onder de grond beland
         {
             transform.position = new Vector2(this.gameObject.transform.position.x, -4.031514f);//Speler word terug gezet.
@@ -297,6 +309,7 @@ public class Player : MonoBehaviour
                 {
                     m_Animator.SetTrigger("Jump");
                 }
+                landing = false;
                 jump.Play();
                 Counter = 0;//Zet jump counter op 0?
                 IntJumper = 3;//????????????????????
