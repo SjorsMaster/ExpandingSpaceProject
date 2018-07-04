@@ -146,8 +146,12 @@ MonoBehaviour:
   Timer: 1
   MinTime: 3
   Teller: 0
+  deadRood: {fileID: 1378234573301508, guid: 607857dfca8144a41be3ba69e4e498a9, type: 2}
+  deadBlauw: {fileID: 1905997221903546, guid: d770e3190666bff4ab32419e0729f527, type: 2}
   dead: {fileID: 1828956728291884, guid: 89fc50cd0867b424b84a3c66c41b4bab, type: 2}
   win: {fileID: 1828956728291884, guid: f2e645e75e1442d47bfbda8211e40fbc, type: 2}
+  winBlauw: {fileID: 1828956728291884, guid: f2e645e75e1442d47bfbda8211e40fbc, type: 2}
+  winRood: {fileID: 1553219781515976, guid: c40817842ee5a254e9fd07a10c1642a2, type: 2}
   dust: {fileID: 1231527495480386, guid: b27f0e6f10d394245977214056a1364c, type: 2}
   confirm: {fileID: 1695570444631394, guid: 1dd4e6af5ad2e89469a9f3f223076efc, type: 2}
   raketGemaakt: {fileID: 1159798639695094, guid: 2e7d995e119d1344386dfeb664daecd7,
