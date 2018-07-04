@@ -67,9 +67,12 @@ public class Player : MonoBehaviour
 
     /*<------GAMEOBJECTS------>*/
 
+    public GameObject deadRood;
     public GameObject deadBlauw; //Speler, DOOD
     public GameObject dead; //Speler, DOOD
     public GameObject win; //Speler, GEWONNEN
+    public GameObject winBlauw;
+    public GameObject winRood;
     public GameObject dust; //Rook wolken
     public GameObject confirm; //Confirmatie opakken/Weggebracht
     public GameObject raketGemaakt;//Gefixte Raket
@@ -96,7 +99,10 @@ public class Player : MonoBehaviour
         if (SelectedSkin == 1)
         {
             m_Animator.SetTrigger("JumpBlauw");
-            //m_Animator.SetInteger("WalkJumpIdleBlauw", 0);
+        }
+        if (SelectedSkin == 2)
+        {
+            m_Animator.SetTrigger("JumpRood");
         }
         CurrentStage = SceneManager.GetActiveScene().name;//Haal scene naam op.
         PlayerPrefs.SetString("StageRestart", CurrentStage);//Slaat huidige level op voor restart.
@@ -118,7 +124,7 @@ public class Player : MonoBehaviour
             if (!landing)
             {
                 landing = true;
-                m_Animator.SetTrigger("Land");
+                //m_Animator.SetTrigger("Land");
             }
             MoonJumper = false;//Zet gesprongen op niet waar
             IntJumper = 0;//IntJumper 0?
@@ -236,6 +242,10 @@ public class Player : MonoBehaviour
             {
                 m_Animator.SetInteger("WalkJumpIdleBlauw", 1);
             }
+            if (SelectedSkin == 2)
+            {
+                m_Animator.SetInteger("WalkJumpIdleRood", 1);
+            }
 
         }
 
@@ -277,6 +287,10 @@ public class Player : MonoBehaviour
             {
                 m_Animator.SetInteger("WalkJumpIdleBlauw", 0);
             }
+            if (SelectedSkin == 2)
+            {
+                m_Animator.SetInteger("WalkJumpIdleRood", 0);
+            }
 
         }
 
@@ -317,6 +331,10 @@ public class Player : MonoBehaviour
                 {
                     m_Animator.SetTrigger("JumpBlauw");
                 }
+                if (SelectedSkin == 2)
+                {
+                    m_Animator.SetTrigger("JumpRood");
+                }
                 landing = false;
                 jump.Play();
                 Counter = 0;//Zet jump counter op 0?
@@ -346,16 +364,23 @@ public class Player : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("Achievements", 1) == 1)
         {
-            PlayerPrefs.SetInt("Deaths", PlayerPrefs.GetInt("Deaths", 0) + 1);
+            PlayerPrefs.SetInt("Strangeritual", PlayerPrefs.GetInt("Strangeritual", 0) + 1);
         }
         
         if(SelectedSkin == 0)
         {
             Instantiate(dead, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Spawnt dood karakter
+            Debug.Log(SelectedSkin);
         }
         if(SelectedSkin == 1)
         {
             Instantiate(deadBlauw, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Spawnt dood karakter
+            Debug.Log(SelectedSkin);
+        }
+        if (SelectedSkin == 2)
+        {
+            Instantiate(deadRood, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Spawnt dood karakter
+            Debug.Log(SelectedSkin);
         }
         Destroy(this.gameObject);//Verwijderd speler.
     }
@@ -370,7 +395,19 @@ public class Player : MonoBehaviour
             }
         }
         Instantiate(raketGemaakt, new Vector2(-6, -2f), Quaternion.identity);//Spawnt gerepareerde raket
-        Instantiate(win, new Vector2(-5.93f, 1f), Quaternion.identity);//Spawnt win karakter.
+        if (SelectedSkin == 0)
+        {
+            Instantiate(win, new Vector2(-5.93f, 1f), Quaternion.identity);//Spawnt win karakter.
+        }
+        if (SelectedSkin == 1)
+        {
+            Instantiate(winBlauw, new Vector2(-5.93f, 1f), Quaternion.identity);//Spawnt win karakter.
+        }
+        if (SelectedSkin == 2)
+        {
+            Instantiate(winRood, new Vector2(-5.93f, 1f), Quaternion.identity);//Spawnt win karakter.
+        }
+
         Destroy(raketKapot);//Gooit kappotte raket weg.
         if (StageID > Completed)//Kijkt of er een hoger level is behaald dan deze (Voor savegame progress)
         {//Zo niet
