@@ -10,17 +10,17 @@ public class MOTDGrowShrink : MonoBehaviour {
 
         if (!one)
         {
-            transform.localScale += new Vector3(0.01F, 0, 0) / 45;
+            transform.localScale += new Vector3(0.01F, 0, 0) / 35;
         }
-        if (transform.localScale.x >= 0.3f)
+        if (transform.localScale.x >= 0.18f)
         {
             one = true;
         }
         if (one)
         {
-            transform.localScale -= new Vector3(0.01F, 0, 0) / 45;
+            transform.localScale -= new Vector3(0.01F, 0, 0) / 35;
         }
-        if (transform.localScale.x <= 0.25f)
+        if (transform.localScale.x <= 0.15f)
         {
             one = false;
         }
