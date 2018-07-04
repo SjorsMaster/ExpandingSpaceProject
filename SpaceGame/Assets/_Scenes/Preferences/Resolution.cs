@@ -8,6 +8,11 @@ public class Resolution : MonoBehaviour {
     private bool FullScreenCheck;
     public Dropdown Valuer;
 
+    private void Start()
+    {
+        Valuer.value = PlayerPrefs.GetInt("Resolution", 0);
+    }
+
     private void Update()
     {
         if (PlayerPrefs.GetInt("FullScreen", 0) == 0)
