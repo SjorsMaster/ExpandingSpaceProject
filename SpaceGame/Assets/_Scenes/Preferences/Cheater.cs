@@ -10,7 +10,6 @@ public class Cheater : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(this.gameObject);
-        Debug.Log(PlayerPrefs.GetInt("Cheater", 0));
     }
 	
 	// Update is called once per frame

@@ -19,7 +19,6 @@ public class LevelLoader : MonoBehaviour {
     private void Start()
     {
         LevelName = PlayerPrefs.GetString("Level", "Menu");//Haalt level naam op, Als het mistlukt, word het standaard op menu gezet.
-        Debug.Log(LevelName);
         ///SpriteGenerator = Random.Range(1, 3);//Random lopend popetje genereren op laadscherm.
         LoadLevel(LevelName);//Voer loadlevel uit met level naam
     }
