@@ -61,7 +61,7 @@ public class AchievementPopup : MonoBehaviour
             }
             if (PlayerPrefs.GetInt("Strangeritual", 0) == 666)
             {
-                PlayerPrefs.SetInt("GottaGoFAST", 777);
+                PlayerPrefs.SetInt("Strangeritual", 777);
                 Skin.text = "Red skin unlocked!";
                 GoUp("Strange ritual");
             }
@@ -70,17 +70,17 @@ public class AchievementPopup : MonoBehaviour
                 PlayerPrefs.SetInt("Collector", 200);
                 GoUp("Collector");
             }
+            if (PlayerPrefs.GetInt("AdventureOver", 0) == 1)
+            {
+                PlayerPrefs.SetInt("AdventureOver", 2);
+                Skin.text = "Gray skin unlocked!";
+                GoUp("Adventure Over");
+            }
             if (PlayerPrefs.GetInt("Cheater", 0) == 1)
             {
                 PlayerPrefs.SetInt("Cheater", 2);
                 GoUp("Cheater");
             }
-            /*if (Reset)
-            {
-                PlayerPrefs.SetInt("MoonJumper", 999);
-            }*/
-
-
 
             if (Active)
             {
