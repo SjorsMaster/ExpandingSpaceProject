@@ -746,7 +746,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4276091477451494, guid: c19a9a54470b47249b844f0f2081801d, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114402261521650190, guid: c19a9a54470b47249b844f0f2081801d,
         type: 2}
@@ -910,6 +910,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114418662460130678, guid: 04142525365e1ae42b9552afa7c98771,
+        type: 2}
+      propertyPath: Position
+      value: 
+      objectReference: {fileID: 334894444}
+    - target: {fileID: 114418662460130678, guid: 04142525365e1ae42b9552afa7c98771,
+        type: 2}
+      propertyPath: Scene
+      value: 
+      objectReference: {fileID: 1282650325}
     - target: {fileID: 114755543465625556, guid: 04142525365e1ae42b9552afa7c98771,
         type: 2}
       propertyPath: ItemsLeft
@@ -940,22 +950,6 @@ Prefab:
       propertyPath: jump
       value: 
       objectReference: {fileID: 540116407}
-    - target: {fileID: 114418662460130678, guid: 04142525365e1ae42b9552afa7c98771,
-        type: 2}
-      propertyPath: Position
-      value: 
-      objectReference: {fileID: 334894444}
-    - target: {fileID: 114418662460130678, guid: 04142525365e1ae42b9552afa7c98771,
-        type: 2}
-      propertyPath: Scene
-      value: 
-      objectReference: {fileID: 1282650325}
-    - target: {fileID: 114755543465625556, guid: 04142525365e1ae42b9552afa7c98771,
-        type: 2}
-      propertyPath: deadBlauw
-      value: 
-      objectReference: {fileID: 1828956728291884, guid: 568fc9b2c3109934584618eff45ef614,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04142525365e1ae42b9552afa7c98771, type: 2}
   m_IsPrefabParent: 0
@@ -3060,7 +3054,7 @@ Transform:
   m_LocalScale: {x: 1, y: -1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1451792280
 GameObject:
@@ -3711,7 +3705,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1693870746
 MonoBehaviour:
@@ -3742,7 +3736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1699121634
 MonoBehaviour:
   m_ObjectHideFlags: 0
