@@ -27,12 +27,12 @@ public class StageSelect : MonoBehaviour {
 
         SceneSeen = PlayerPrefs.GetInt("Completed", 0);
 
-        if (SceneSeen == 0)
+        /*if (SceneSeen == 0)
         {
             SceneSeen++;
             PlayerPrefs.SetInt("Completed", SceneSeen);
             SceneManager.LoadScene("StoryPage1");
-        }
+        }*/
     }
 
     void Update () {
