@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61688714392660502}
   - component: {fileID: 114755543465625556}
   - component: {fileID: 114418662460130678}
-  - component: {fileID: 95219132561743130}
+  - component: {fileID: 95867675066026200}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1828956728291884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.26, y: -3.39, z: 0}
+  m_LocalPosition: {x: -20.21, y: -3.46, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
@@ -90,7 +90,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.2875938}
   m_EdgeRadius: 0
---- !u!95 &95219132561743130
+--- !u!95 &95867675066026200
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -138,8 +138,8 @@ MonoBehaviour:
   ShowHolding: {fileID: 0}
   cooldown: {fileID: 0}
   RocketState: 0
-  HaveToCollect: 1
-  left: 1
+  HaveToCollect: 5
+  left: 5
   SelectedSkin: 0
   WalkSpeed: 0.1
   Speed: 0.15
@@ -152,7 +152,7 @@ MonoBehaviour:
   deadBlauw: {fileID: 1905997221903546, guid: d770e3190666bff4ab32419e0729f527, type: 2}
   dead: {fileID: 1828956728291884, guid: 89fc50cd0867b424b84a3c66c41b4bab, type: 2}
   win: {fileID: 1828956728291884, guid: f2e645e75e1442d47bfbda8211e40fbc, type: 2}
-  winBlauw: {fileID: 1828956728291884, guid: f2e645e75e1442d47bfbda8211e40fbc, type: 2}
+  winBlauw: {fileID: 1270232464870730, guid: 533ce909a4cf3794a99b3895d735d35d, type: 2}
   winRood: {fileID: 1553219781515976, guid: c40817842ee5a254e9fd07a10c1642a2, type: 2}
   dust: {fileID: 1231527495480386, guid: b27f0e6f10d394245977214056a1364c, type: 2}
   confirm: {fileID: 1695570444631394, guid: 1dd4e6af5ad2e89469a9f3f223076efc, type: 2}

@@ -431,7 +431,7 @@ public class Player : MonoBehaviour
         {
             Instantiate(winRood, new Vector2(-5.93f, 1f), Quaternion.identity);//Spawnt win karakter.
         }
-        if (SelectedSkin == 2)
+        if (SelectedSkin == 3)
         {
             Instantiate(winGrijs, new Vector2(-5.93f, 1f), Quaternion.identity);//Spawnt win karakter.
         }
