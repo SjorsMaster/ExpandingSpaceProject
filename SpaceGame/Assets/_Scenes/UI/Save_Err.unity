@@ -860,11 +860,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d418f60c4844141bcf4d4e4a1b64fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.1
+  delay: 0.05
   fullText: 'Your save seems to be from a diffrent version of the game. Would you
     like to reset it? '
   Stage: '-'
   ClickToSkip: 0
+  AchievementName: 
+  AlsoGiveAchievement: 0
 --- !u!1 &1204111268
 GameObject:
   m_ObjectHideFlags: 0

@@ -206,15 +206,16 @@ public class Player : MonoBehaviour
             {
                 pickup.Play();
                 holding = false;//Zet vasthouden op nietwaar, want het is weggebracht.
-                Poof.Play();
+                if (PlayerPrefs.GetInt("Particles", 1) == 1)
+                {
+                    Poof.Play();
+                    Instantiate(confirm, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Creeert confrimatie effect.
+                }
                 Item1.SetActive(false);
                 Item2.SetActive(false);
                 Item3.SetActive(false);
                 Item4.SetActive(false);
                 Item5.SetActive(false);
-                if (PlayerPrefs.GetInt("Particles", 1) == 1){
-                    Instantiate(confirm, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Creeert confrimatie effect.
-                }
                 Collected++;//Telt op hoeveel er verzameld zijn.
                 RocketState++;
 

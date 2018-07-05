@@ -8,6 +8,6 @@ public class CheckDeaths : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {        
-        text.text = "" + PlayerPrefs.GetInt("Strangeritual", 0);;
+        text.text = "Total deaths: " + PlayerPrefs.GetInt("Strangeritual", 0);
 	}
 }
