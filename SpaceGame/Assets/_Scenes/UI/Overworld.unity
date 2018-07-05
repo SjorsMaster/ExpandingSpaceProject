@@ -207,6 +207,11 @@ MonoBehaviour:
   c: {fileID: 1660827664}
   d: {fileID: 864789907}
   e: {fileID: 856098819}
+  f: {fileID: 1267413658}
+  g: {fileID: 2015919887}
+  h: {fileID: 551291170}
+  i: {fileID: 935607870}
+  j: {fileID: 820274523}
   SceneSeen: 0
 --- !u!4 &59840650
 Transform:
@@ -1388,7 +1393,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 5
+          m_StringArgument: StoryPage3
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

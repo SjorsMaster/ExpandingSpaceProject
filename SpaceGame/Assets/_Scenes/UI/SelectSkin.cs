@@ -3,6 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectSkin : MonoBehaviour {
+
+    private Animator anim;
+    public GameObject player;
+
+    private void Start()
+    {
+        anim = player.GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        randomSkinner();
+    }
+
     public void onClick(int SkinNumber)
     {
         PlayerPrefs.SetInt("Skin", SkinNumber);
@@ -12,19 +26,19 @@ public class SelectSkin : MonoBehaviour {
     {
         if (PlayerPrefs.GetInt("Skin") == 0)
         {
-            //Animator
+            anim.SetInteger("Skin", 0);
         }
         if (PlayerPrefs.GetInt("Skin") == 1)
         {
-            //Animator
+            anim.SetInteger("Skin", 1);
         }
         if (PlayerPrefs.GetInt("Skin") == 2)
         {
-            //Animator
+            anim.SetInteger("Skin", 2);
         }
         if (PlayerPrefs.GetInt("Skin") == 3)
         {
-            //Animator
+            anim.SetInteger("Skin", 3);
         }
     }
 }

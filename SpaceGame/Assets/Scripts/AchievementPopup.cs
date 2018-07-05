@@ -7,6 +7,7 @@ public class AchievementPopup : MonoBehaviour
 {
 
     public Text AchievementText;
+    public Text Skin;
 
     public Transform Starting;//AchievementPopupStart
     public Transform Ending;//AchievementPopupEind
@@ -25,14 +26,13 @@ public class AchievementPopup : MonoBehaviour
     void Start()
     {
         step = speed * Time.deltaTime;
+        Skin.text = "";
     }
 
     void FixedUpdate()
     {
         if (PlayerPrefs.GetInt("Achievements", 1) == 1)
             {
-            PlayerPrefs.SetInt("AchievementOn", 2);
-            GoUp("Achievements!");
             if (PlayerPrefs.GetInt("MoonJumper", 0) == 100)
             {
                 PlayerPrefs.SetInt("MoonJumper", 200);
@@ -56,24 +56,36 @@ public class AchievementPopup : MonoBehaviour
             if (PlayerPrefs.GetInt("GottaGoFAST", 0) == 1)
             {
                 PlayerPrefs.SetInt("GottaGoFAST", 2);
+                Skin.text = "Blue skin unlocked!";
                 GoUp("Gotta go FAST!");
+            }
+            if (PlayerPrefs.GetInt("Strangeritual", 0) == 666)
+            {
+                PlayerPrefs.SetInt("Strangeritual", 777);
+                Skin.text = "Red skin unlocked!";
+                GoUp("Strange ritual");
             }
             if (PlayerPrefs.GetInt("Collector", 0) == 100)
             {
                 PlayerPrefs.SetInt("Collector", 200);
                 GoUp("Collector");
             }
+            if (PlayerPrefs.GetInt("AdventureOver", 0) == 1)
+            {
+                PlayerPrefs.SetInt("AdventureOver", 2);
+                Skin.text = "Gray skin unlocked!";
+                GoUp("Adventure Over");
+            }
             if (PlayerPrefs.GetInt("Cheater", 0) == 1)
             {
                 PlayerPrefs.SetInt("Cheater", 2);
                 GoUp("Cheater");
             }
-            /*if (Reset)
+            if (PlayerPrefs.GetInt("AdventureOver", 0) == 1 && PlayerPrefs.GetInt("EZGAME", 0) == 0)
             {
-                PlayerPrefs.SetInt("MoonJumper", 999);
-            }*/
-
-
+                PlayerPrefs.SetInt("EZGAME", -100000000);
+                GoUp("EZ GAME");
+            }
 
             if (Active)
             {
@@ -96,6 +108,7 @@ public class AchievementPopup : MonoBehaviour
                 {
                     Active = false;
                     go = false;
+                    Skin.text = "";
                     Timer = 0;
                 }
             }

@@ -17,6 +17,7 @@ public class DebugScript : MonoBehaviour
     private bool cheats;
     int inputC;
     int Speedor;
+    int skin;
     private string stripped;
 
     public bool GodModus;
@@ -68,6 +69,20 @@ public class DebugScript : MonoBehaviour
                 if (Speedor > 100 || Speedor < 0)
                 {
                     Logs.text = "[" + System.DateTime.Now + "]:\n" + "Error, Invalid value.\n" + Logs.text;
+                }
+
+            }
+
+            if (mainInputField.text.ToString().Contains("setskin") && Input.GetKey(KeyCode.Return))
+            {
+                stripped = mainInputField.text.ToString().Replace("setskin ", "");
+                skin = Int32.Parse(stripped);
+                PlayerPrefs.SetInt("Skin", skin);
+                Logs.text = "[" + System.DateTime.Now + "]:\n" + "Skin changed to skin " + skin + ".\n" + Logs.text;
+
+                if (skin >= 4 || skin <= -1)
+                {
+                    Logs.text = "[" + System.DateTime.Now + "]:\n" + "Error, Skin not found.\n" + Logs.text;
                 }
 
             }

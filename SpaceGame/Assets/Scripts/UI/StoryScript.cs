@@ -14,6 +14,8 @@ public class StoryScript : MonoBehaviour
     public string fullText;
     public string Stage;
     public bool ClickToSkip = true;
+    public string AchievementName;
+    public bool AlsoGiveAchievement = false;
 
     private string currentText = "";
 
@@ -37,6 +39,10 @@ public class StoryScript : MonoBehaviour
         if (Input.GetKeyDown("space") && ClickToSkip || Input.GetMouseButtonDown(0) && ClickToSkip)
         {
             SceneManager.LoadScene(Stage);
+            if (AlsoGiveAchievement)
+            {
+                PlayerPrefs.SetInt(AchievementName, 1);
+            }
         }
     }
 }

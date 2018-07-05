@@ -12,6 +12,11 @@ public class StageSelect : MonoBehaviour {
     public Button c;//Zijn
     public Button d;//De
     public Button e;//Knoppen
+    public Button f;//Knoppen
+    public Button g;//Knoppen
+    public Button h;//Knoppen
+    public Button i;//Knoppen
+    public Button j;//Knoppen
     public int SceneSeen;
 
 
@@ -51,8 +56,28 @@ public class StageSelect : MonoBehaviour {
         {
             e.interactable = true;//Etc......
         }
+        if (Completed >= 5 && !e.interactable)//Etc.....
+        {
+            f.interactable = true;//Etc......
+        }
+        if (Completed >= 6 && !e.interactable)//Etc.....
+        {
+            g.interactable = true;//Etc......
+        }
+        if (Completed >= 7 && !e.interactable)//Etc.....
+        {
+            h.interactable = true;//Etc......
+        }
+        if (Completed >= 8 && !e.interactable)//Etc.....
+        {
+            i.interactable = true;//Etc......
+        }
+        if (Completed >= 9 && !e.interactable)//Etc.....
+        {
+            j.interactable = true;//Etc......
+        }
         //Kan beste in array maar hoe?
-        if(Completed <= 0)
+        if (Completed <= 0)
         {
             b.interactable = false;//Als
             c.interactable = false;//er

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class DEBUG : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class DEBUG : MonoBehaviour
     private bool cheats;
     int inputC;
     private string stripped;
+    private int skin;
 
     public bool GodModus;
     public bool FlyModus;
@@ -76,6 +78,20 @@ public class DEBUG : MonoBehaviour
                 }
 
             }
+            if (mainInputField.text.ToString().Contains("setskin") && Input.GetKey(KeyCode.Return))
+            {
+                stripped = mainInputField.text.ToString().Replace("setskin ", "");
+                skin = Int32.Parse(stripped);
+                PlayerPrefs.SetInt("Skin", skin);
+                Logs.text = "[" + System.DateTime.Now + "]:\n" + "Skin changed to skin " + skin + ".\n" + Logs.text;
+
+                if (skin >= 4 || skin <= -1)
+                {
+                    Logs.text = "[" + System.DateTime.Now + "]:\n" + "Error, Skin not found.\n" + Logs.text;
+                }
+
+            }
+
             if (mainInputField.text.ToString().Contains("spawn") && Input.GetKey(KeyCode.Return))
             {
                 stripped = mainInputField.text.ToString().Replace("spawn ", "");

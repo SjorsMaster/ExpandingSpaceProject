@@ -24,8 +24,9 @@ GameObject:
   - component: {fileID: 61688714392660502}
   - component: {fileID: 114993779879955232}
   - component: {fileID: 114305372710107384}
-  - component: {fileID: 95852836601893168}
   - component: {fileID: 82304593985986574}
+  - component: {fileID: 111226298921896220}
+  - component: {fileID: 95765041220180600}
   m_Layer: 13
   m_Name: PlayerDead
   m_TagString: Dead
@@ -40,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1828956728291884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.807783, y: -7.6200275, z: 0}
+  m_LocalPosition: {x: 3.5571365, y: -0.5331466, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
@@ -186,7 +187,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &95852836601893168
+--- !u!95 &95765041220180600
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -204,6 +205,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &111226298921896220
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828956728291884}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 55b76ff880cc8724683cbdae27ddb10c, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114305372710107384
 MonoBehaviour:
   m_ObjectHideFlags: 1
