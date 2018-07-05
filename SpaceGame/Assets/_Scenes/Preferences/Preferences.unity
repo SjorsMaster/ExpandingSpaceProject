@@ -529,14 +529,14 @@ RectTransform:
   m_GameObject: {fileID: 58900313}
   m_LocalRotation: {x: -0, y: -0, z: 0.012201851, w: 0.99992555}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children: []
   m_Father: {fileID: 638012694}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.3980001}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 142.7, y: -100.1}
+  m_AnchoredPosition: {x: 142, y: -86}
   m_SizeDelta: {x: 151.69, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &58900315
@@ -802,6 +802,84 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &107897415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1174123373468766, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 107897416}
+  - component: {fileID: 107897418}
+  - component: {fileID: 107897417}
+  m_Layer: 5
+  m_Name: Text (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &107897416
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224903141971582254, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107897415}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.66666657, y: 0.66666657, z: 0.66666657}
+  m_Children: []
+  m_Father: {fileID: 915289202}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 10.999995, y: -168}
+  m_SizeDelta: {x: 962, y: 853}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &107897417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114948512799133606, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107897415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.16696332, g: 0.23222338, b: 0.5283019, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: c9d1c8bf23f15f442a0587e6e4cf0782, type: 3}
+    m_FontSize: 185
+    m_FontStyle: 2
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 204
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 0.6
+  m_Text: "Artists:\nZo\xEB, R\xFCmeysa, Fleur."
+--- !u!222 &107897418
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 222919979883640982, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 107897415}
 --- !u!1 &165573860
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,6 +2565,7 @@ RectTransform:
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.29999998}
   m_Children:
   - {fileID: 987825591}
+  - {fileID: 107897416}
   m_Father: {fileID: 638012694}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2793,7 +2872,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11, y: -318}
+  m_AnchoredPosition: {x: 11, y: -382}
   m_SizeDelta: {x: 962, y: 853}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987825592
@@ -2829,7 +2908,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.6
-  m_Text: "Artists:\nZo\xEB, R\xFCmeysa, Fleur.\n\nDevelopers:\nShailesh, Sjors, Marco."
+  m_Text: 'Developers:
+
+    Shailesh, Sjors, Marco.'
 --- !u!222 &987825593
 CanvasRenderer:
   m_ObjectHideFlags: 0

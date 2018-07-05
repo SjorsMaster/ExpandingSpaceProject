@@ -700,7 +700,7 @@ Prefab:
     - target: {fileID: 114397381200575038, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
       propertyPath: AchievementGoalNum
-      value: -100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114397381200575038, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
@@ -802,7 +802,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1571001979743316, guid: 6dcbfdc714501014ead1ef6fe2f192ba, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6dcbfdc714501014ead1ef6fe2f192ba, type: 2}
@@ -1317,7 +1317,7 @@ Prefab:
     - target: {fileID: 224176633143959256, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -254
+      value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 224176633143959256, guid: 6dcbfdc714501014ead1ef6fe2f192ba,
         type: 2}

@@ -81,9 +81,9 @@ public class AchievementPopup : MonoBehaviour
                 PlayerPrefs.SetInt("Cheater", 2);
                 GoUp("Cheater");
             }
-            if (PlayerPrefs.GetInt("AdventureOver", 0) == 1 && PlayerPrefs.GetInt("EZGAME", 0) == 0)
+            if (PlayerPrefs.GetInt("AdventureOver", 0) > 1 && PlayerPrefs.GetInt("EZGAME", 0) == 0)
             {
-                PlayerPrefs.SetInt("EZGAME", -100000000);
+                PlayerPrefs.SetInt("EZGAME", 1);
                 GoUp("EZ GAME");
             }
 
