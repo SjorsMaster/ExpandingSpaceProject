@@ -30,6 +30,7 @@ public class StageSelect : MonoBehaviour {
         if (SceneSeen == 0)
         {
             SceneSeen++;
+            Debug.Log(SceneSeen);
             PlayerPrefs.SetInt("Seen", SceneSeen);
             SceneManager.LoadScene("StoryPage1");
         }

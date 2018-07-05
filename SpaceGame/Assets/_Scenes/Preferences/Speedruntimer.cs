@@ -10,22 +10,19 @@ public class Speedruntimer : MonoBehaviour
     private bool time;
     private Scene Scene;
     public Text Text;
-
-    public void Speedrunner()
+public void press()
     {
-        PlayerPrefs.SetInt("Seen", 0);
         time = true;
-        DontDestroyOnLoad(this.gameObject);
     }
-
     private void Update()
     {
         if (time)
         {
+            DontDestroyOnLoad(this.gameObject);
+            PlayerPrefs.SetInt("Seen", 0);
             Text.text = "" + PassedTime.ToString("F2");
             Scene = SceneManager.GetActiveScene();
-            Debug.Log(Scene);
-            if (Scene.name != "Loading" && Scene.name != "Achievements" && Scene.name != "Preferences" && Scene.name != "Overworld" && Scene.name != "Reset")
+            if (Scene.name != "Loading" && Scene.name != "Achievements" && Scene.name != "Preferences" && Scene.name != "Overworld" && Scene.name != "Reset" && Scene.name != "Menu")
             {
                 PassedTime += Time.deltaTime;
             }
@@ -38,6 +35,10 @@ public class Speedruntimer : MonoBehaviour
                     PlayerPrefs.SetString("SpeedrunName", PlayerPrefs.GetString("Player","Player"));
                     PlayerPrefs.SetString("Record", "Current Record: " + PlayerPrefs.GetString("SpeedrunName", "error") + " - " + PlayerPrefs.GetFloat("Speedrun", 10000000000000000000) + " seconds.");
                 }
+            }
+            if (PassedTime == 0)
+            {
+                Text.text = "Speedrun Ready";
             }
             if(Scene.name != "Menu" && PassedTime > 0.01f)
             {

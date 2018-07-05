@@ -2195,7 +2195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &693376290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2641,12 +2641,12 @@ GameObject:
   - component: {fileID: 994912606}
   - component: {fileID: 994912608}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: SpeedRunRecord
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &994912605
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2734,7 +2734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1031336437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3890,7 +3890,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1031336437}
-        m_MethodName: Speedrunner
+        m_MethodName: press
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
