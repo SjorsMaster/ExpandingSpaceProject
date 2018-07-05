@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Cheater : MonoBehaviour {
 
     public Text oof;
+    public AudioSource eef;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,7 @@ public class Cheater : MonoBehaviour {
         }
         if (oof.text == "CHEATER")
         {
+            eef.Play();
             PlayerPrefs.SetInt("Cheater", 2);
         }
     }
