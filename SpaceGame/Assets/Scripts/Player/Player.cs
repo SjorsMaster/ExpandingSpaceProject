@@ -9,6 +9,14 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 
 {
+    /*<------ITEMS------>*/
+    public GameObject Item1;
+    public GameObject Item2;
+    public GameObject Item3;
+    public GameObject Item4;
+    public GameObject Item5;
+
+
     /*<------ANIMATORS------>*/
 
     Animator m_Animator;
@@ -31,7 +39,6 @@ public class Player : MonoBehaviour
     /*<------Texts------>*/
 
     public Text ItemsLeft; //Laten zien hoeveel items er nog overzijn in dit level.
-    public Text ShowHolding; //Laten zien of de speler iets vast heeft.
 
 
     /*<------Images------>*/
@@ -115,7 +122,6 @@ public class Player : MonoBehaviour
         StageID = int.Parse(SceneManager.GetActiveScene().name); //Haal huidige level naam op, En zet om tot een Int. \\Creert errors in levels zonder int.
         Completed = PlayerPrefs.GetInt("Completed", 0); //Haalt op hoeveel levels er behaald zijn, Kan hij niks vinden? Zet hij het op 0
         ItemsLeft.text = "Left: " + left; //Laad in hoeveel items je moet behalen voor het spel echt begint.
-        ShowHolding.text = "Holding nothing!"; //Laad in of je al iets vast heb voor het spel echt begint.
 
         // Debug.Log("Get Stage NAME: " + SceneManager.GetActiveScene().name + " INT = " + StageID); //Print de level naam als int en string.
     }
@@ -147,6 +153,26 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.tag == "Collectable" && !holding) //Als object verzamelbaar is en speler niets vast heeft.
         {
+            if (other.gameObject.name == "ruimteonderdeel_1")
+            {
+                Item1.SetActive(true);
+            }
+            if (other.gameObject.name == "ruimteonderdeel_2")
+            {
+                Item2.SetActive(true);
+            }
+            if (other.gameObject.name == "ruimteonderdeel_3")
+            {
+                Item3.SetActive(true);
+            }
+            if (other.gameObject.name == "ruimteonderdeel_4")
+            {
+                Item4.SetActive(true);
+            }
+            if (other.gameObject.name == "ruimteonderdeel_5")
+            {
+                Item5.SetActive(true);
+            }
             if (PlayerPrefs.GetInt("Achievements", 1) == 1)
             {
                 PlayerPrefs.SetInt("Collector", PlayerPrefs.GetInt("Collector", 0) + 1);
@@ -156,7 +182,6 @@ public class Player : MonoBehaviour
                 Instantiate(confirm, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity); //Geeft confirmation effect op speler.
             }
             holding = true; //Zet vasthouden op waar.
-            ShowHolding.text = "Holding item!"; //Laat vasthouden op scherm zien.
             Destroy(other.gameObject); //Verwijder bestaan van verzamelbaar object, is niet meer nodig na oppakken.
         }
 
@@ -169,6 +194,11 @@ public class Player : MonoBehaviour
             {
                 pickup.Play();
                 holding = false;//Zet vasthouden op nietwaar, want het is weggebracht.
+                Item1.SetActive(false);
+                Item2.SetActive(false);
+                Item3.SetActive(false);
+                Item4.SetActive(false);
+                Item5.SetActive(false);
                 if (PlayerPrefs.GetInt("Particles", 1) == 1){
                     Instantiate(confirm, new Vector2(this.transform.position.x, this.transform.position.y), Quaternion.identity);//Creeert confrimatie effect.
                 }
@@ -176,7 +206,6 @@ public class Player : MonoBehaviour
                 RocketState++;
 
                 left--;//Trekt af van hoeveel er nog moeten.
-                ShowHolding.text = "Holding nothing!";//Zorgt dat de text aangeeft dat de speler niks vast heeft.
                 ItemsLeft.text = "Left: " + left;//Update te text zodat de speler weet hoeveel er nog zijn.
             }
             if (Collected >= HaveToCollect)//Als er ## verzameld zijn heeft de speler gewonnen.
