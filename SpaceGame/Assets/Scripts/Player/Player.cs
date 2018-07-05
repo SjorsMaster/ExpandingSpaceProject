@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -35,6 +36,14 @@ public class Player : MonoBehaviour
     public bool GODMODE;
     public bool GameOver; //Kijken of het spel al over is.
 
+
+
+
+
+    /// <summary>
+    /// other
+    public ParticleSystem Poof;
+    /// </summary>
 
     /*<------Texts------>*/
 
@@ -173,6 +182,8 @@ public class Player : MonoBehaviour
             {
                 Item5.SetActive(true);
             }
+            Poof.Play();
+
             if (PlayerPrefs.GetInt("Achievements", 1) == 1)
             {
                 PlayerPrefs.SetInt("Collector", PlayerPrefs.GetInt("Collector", 0) + 1);
@@ -194,6 +205,7 @@ public class Player : MonoBehaviour
             {
                 pickup.Play();
                 holding = false;//Zet vasthouden op nietwaar, want het is weggebracht.
+                Poof.Play();
                 Item1.SetActive(false);
                 Item2.SetActive(false);
                 Item3.SetActive(false);
