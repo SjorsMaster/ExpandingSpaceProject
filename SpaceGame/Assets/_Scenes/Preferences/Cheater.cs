@@ -21,7 +21,7 @@ public class Cheater : MonoBehaviour {
         }
         if (oof.text == "CHEATER")
         {
-            eef.Play();
+            //eef.Play();
             PlayerPrefs.SetInt("Cheater", 2);
         }
     }
