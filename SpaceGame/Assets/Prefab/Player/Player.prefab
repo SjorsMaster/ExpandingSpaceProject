@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61688714392660502}
   - component: {fileID: 114755543465625556}
   - component: {fileID: 114418662460130678}
-  - component: {fileID: 95867675066026200}
+  - component: {fileID: 95575367594850738}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -90,7 +90,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.2875938}
   m_EdgeRadius: 0
---- !u!95 &95867675066026200
+--- !u!95 &95575367594850738
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -137,18 +137,24 @@ MonoBehaviour:
   Item3: {fileID: 0}
   Item4: {fileID: 0}
   Item5: {fileID: 0}
+  Warning: {fileID: 0}
+  rocketsprite1: {fileID: 21300000, guid: 7200e04894cec91439c453b6abf5969b, type: 3}
+  rocketsprite2: {fileID: 21300000, guid: 1a871d9d78bdcc84ab0d4dd782fccf77, type: 3}
+  rocketsprite3: {fileID: 21300000, guid: 75b4b0f63cfe97743879526ee3192455, type: 3}
+  rocketsprite4: {fileID: 21300000, guid: 2e02eb3da07e61041b77acf78db0b221, type: 3}
   GODMODE: 0
   GameOver: 0
+  Poof: {fileID: 0}
   ItemsLeft: {fileID: 0}
   cooldown: {fileID: 0}
   RocketState: 0
-  HaveToCollect: 1
-  left: 1
+  HaveToCollect: 5
+  left: 5
   SelectedSkin: 0
   WalkSpeed: 0.1
   Speed: 0.15
   Timer: 1
-  MinTime: 10
+  MinTime: 3
   Teller: 0
   deadGrijs: {fileID: 1114273726592998, guid: c869c10558b36584b8cab1cd331f6206, type: 2}
   winGrijs: {fileID: 1637414050423006, guid: f94831aaf4d36fb4a8445863fd377d78, type: 2}
@@ -199,7 +205,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 005199b44c903b54490055e85a2af43f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

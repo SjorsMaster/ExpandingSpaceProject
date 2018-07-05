@@ -22,7 +22,10 @@ public class Player : MonoBehaviour
     /*<------ANIMATORS------>*/
 
     Animator m_Animator;
-
+    public Sprite rocketsprite1;
+    public Sprite rocketsprite2;
+    public Sprite rocketsprite3;
+    public Sprite rocketsprite4;
 
     /*<------Booleans------>*/
 
@@ -249,24 +252,23 @@ public class Player : MonoBehaviour
         }
 
 
-        //RocketState\\
+
         if (RocketState == 1)
         {
-            //CHANGE SPRITE
-        }
-        if (RocketState == 2)
-        {
-            //CHANGE SPRITE
+            raketKapot.GetComponent<SpriteRenderer>().sprite = rocketsprite2;
+            RocketState++;
         }
         if (RocketState == 3)
         {
-            //CHANGE SPRITE
+            raketKapot.GetComponent<SpriteRenderer>().sprite = rocketsprite3;
+            RocketState++;
         }
-        if (RocketState == 4)
+        if (RocketState == 5)
         {
-            //CHANGE SPRITE
+            raketKapot.GetComponent<SpriteRenderer>().sprite = rocketsprite4;
+            RocketState++;
         }
-        if (RocketState >= 5)
+        if (RocketState >= 7)
         {
             //CHANGE SPRITE
         }
