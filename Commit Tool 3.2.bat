@@ -54,10 +54,12 @@ echo.
 echo AIO does all the work for you!
 echo.
 echo.
-SET /P _inputname= Would you like to Clone, Pull, Commit, Push, All-In-One(AIO) or Exit: 
+SET /P _inputname= Would you like to Clone, Pull, Commit, Push, All-In-One(AIO), Unstage or Exit: 
 IF "%_inputname%"=="pull" GOTO :pull
 IF "%_inputname%"=="push" GOTO :push
 IF "%_inputname%"=="ForceItNow" GOTO :force
+IF "%_inputname%"=="unstage" GOTO :undo
+IF "%_inputname%"=="Unstage" GOTO :undo
 IF "%_inputname%"=="commit" GOTO :commit
 IF "%_inputname%"=="clone" GOTO :clone
 IF "%_inputname%"=="exit" GOTO :exit
@@ -75,6 +77,18 @@ goto :start
 :clone
 @title Commit Tool 3.2 - Cloning..
 git clone %URL%
+echo.
+@title Commit Tool 3.2 - Done!
+echo [Done!]
+pause
+cls
+echo.
+goto :start
+
+:undo
+@title Commit Tool 3.2 - Unstaging commit..
+git reset HEAD~1
+echo [Unstaging..]
 echo.
 @title Commit Tool 3.2 - Done!
 echo [Done!]

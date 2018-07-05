@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public GameObject Item3;
     public GameObject Item4;
     public GameObject Item5;
+    public GameObject Warning;
 
 
     /*<------ANIMATORS------>*/
@@ -362,7 +363,7 @@ public class Player : MonoBehaviour
         }
         if (cooldown.fillAmount <= 0.2)//Kijkt of de tijd op is
         {
-            //instantiate text
+            Warning.SetActive(true);
         }
 
         if (this.gameObject.transform.position.y <= -4.031514f)//Als speler onder de grond beland
@@ -424,7 +425,7 @@ public class Player : MonoBehaviour
         if (PlayerPrefs.GetInt("Achievements", 1) == 1)
         {
             PlayerPrefs.SetInt("Strangeritual", PlayerPrefs.GetInt("Strangeritual", 0) + 1);
-            PlayerPrefs.SetInt("EZGAME", 2);
+            PlayerPrefs.SetInt("EZGAME", 0);
         }
         
         if(SelectedSkin == 0)
