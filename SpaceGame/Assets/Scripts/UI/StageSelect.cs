@@ -19,18 +19,18 @@ public class StageSelect : MonoBehaviour {
     public Button j;//Knoppen
     public int SceneSeen;
 
-
-
     private int Completed;//Zie aantal behaalde levels
 
     private void Start()
     {
-        SceneSeen = PlayerPrefs.GetInt("Seen", 0);
+        //PlayerPrefs.SetInt("Seen", 5);
+
+        SceneSeen = PlayerPrefs.GetInt("Completed", 0);
 
         if (SceneSeen == 0)
         {
             SceneSeen++;
-            PlayerPrefs.SetInt("Seen", SceneSeen);
+            PlayerPrefs.SetInt("Completed", SceneSeen);
             SceneManager.LoadScene("StoryPage1");
         }
     }
@@ -56,23 +56,23 @@ public class StageSelect : MonoBehaviour {
         {
             e.interactable = true;//Etc......
         }
-        if (Completed >= 5 && !e.interactable)//Etc.....
+        if (Completed >= 5 && !f.interactable)//Etc.....
         {
             f.interactable = true;//Etc......
         }
-        if (Completed >= 6 && !e.interactable)//Etc.....
+        if (Completed >= 6 && !g.interactable)//Etc.....
         {
             g.interactable = true;//Etc......
         }
-        if (Completed >= 7 && !e.interactable)//Etc.....
+        if (Completed >= 7 && !h.interactable)//Etc.....
         {
             h.interactable = true;//Etc......
         }
-        if (Completed >= 8 && !e.interactable)//Etc.....
+        if (Completed >= 8 && !i.interactable)//Etc.....
         {
             i.interactable = true;//Etc......
         }
-        if (Completed >= 9 && !e.interactable)//Etc.....
+        if (Completed >= 9 && !j.interactable)//Etc.....
         {
             j.interactable = true;//Etc......
         }
@@ -83,22 +83,12 @@ public class StageSelect : MonoBehaviour {
             c.interactable = false;//er
             d.interactable = false;//iets
             e.interactable = false;//niet klopt
+            f.interactable = false;//er
+            g.interactable = false;//iets
+            h.interactable = false;//niet klopt
+            i.interactable = false;//niet klopt
+            j.interactable = false;//niet klopt
         }
 
-
-        /*-DEBUG--DEBUG--DEBUG--DEBUG--DEBUG-*//*
-        if (Input.GetKeyDown("q"))//Voeg score toe
-        {
-            PlayerPrefs.SetInt("Completed", Completed + 1);
-            Completed = PlayerPrefs.GetInt("Completed", 0);
-            Debug.Log(Completed);
-        }
-        if (Input.GetKeyDown("r"))//Reset score
-        {
-            PlayerPrefs.SetInt("Completed", 0);
-            Completed = PlayerPrefs.GetInt("Completed", 0);
-            Debug.Log(Completed);
-        }*/
-        /*-DEBUG--DEBUG--DEBUG--DEBUG--DEBUG-*/
     }
 }
