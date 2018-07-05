@@ -14,6 +14,7 @@ public class AchievementChecker : MonoBehaviour
     private int AchievementState;
     public int AchievementGoalNum = 1;
     public bool IsExactNumber;
+    public bool smaller;
 
     void Awake()
     {
@@ -27,6 +28,17 @@ public class AchievementChecker : MonoBehaviour
                 if (AlsoCreateObject)
                 {
                     Instantiate(CreateObject);
+                }
+            }
+            if (smaller)
+            {
+                if (AchievementState <= AchievementGoalNum)
+                {
+                    AchievementText.text = AchievementName + ": \n" + IfGotText;
+                    if (AlsoCreateObject)
+                    {
+                        Instantiate(CreateObject);
+                    }
                 }
             }
             else

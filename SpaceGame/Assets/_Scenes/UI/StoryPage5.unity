@@ -164,6 +164,8 @@ MonoBehaviour:
   fullText: 'the end '
   Stage: Menu
   ClickToSkip: 1
+  AchievementName: AdventureOver
+  AlsoGiveAchievement: 1
 --- !u!114 &150452794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +256,8 @@ MonoBehaviour:
   fullText: '                                 (press space) '
   Stage: Overworld
   ClickToSkip: 0
+  AchievementName: 
+  AlsoGiveAchievement: 0
 --- !u!114 &228650737
 MonoBehaviour:
   m_ObjectHideFlags: 0
