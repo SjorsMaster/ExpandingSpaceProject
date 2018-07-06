@@ -16,8 +16,19 @@ Thank you for checking us out.
 Feel free to clone/fork.
 
 
-For questions, please mail to: ---
+For questions, please mail to: sjorspnk@gmail.com
 
+Trailer:
+https://www.youtube.com/watch?v=Ws9oHKYTmZ0
 
 Give it a try right here!
-http://sjors.eu/SpaciesAdventure/WebBuild/
+http://24767.hosts.ma-cloud.nl/ma/FinalBuild/
+
+Downloadable versions:
+http://www.mediafire.com/file/gtwn66ynj4v8cqw/SpacieDesktop.zip //Windows
+
+___________ //MacOS --Maybe someday.
+
+___________ //Linux --Maybe someday.
+
+___________ //Android --Maybe someday.

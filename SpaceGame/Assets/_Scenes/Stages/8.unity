@@ -698,13 +698,13 @@ Transform:
   - {fileID: 532731792}
   - {fileID: 1513896309}
   - {fileID: 490265209}
+  - {fileID: 2096757859}
   - {fileID: 1802916659}
   - {fileID: 708266606}
-  - {fileID: 2096757859}
   - {fileID: 148133207}
   - {fileID: 1223629240}
-  - {fileID: 372499043}
   - {fileID: 1296957458}
+  - {fileID: 372499043}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1385,7 +1385,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 206374466}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &372499044
 Rigidbody2D:
@@ -2263,7 +2263,7 @@ Prefab:
     - target: {fileID: 224567132815161966, guid: 7f6a00ac31bfd5a4fad23a75dab8b249,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114656219440882770, guid: 7f6a00ac31bfd5a4fad23a75dab8b249,
         type: 2}
@@ -2274,6 +2274,36 @@ Prefab:
         type: 2}
       propertyPath: m_Colors.m_ColorMultiplier
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114656219440882770, guid: 7f6a00ac31bfd5a4fad23a75dab8b249,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1108651529}
+    - target: {fileID: 114656219440882770, guid: 7f6a00ac31bfd5a4fad23a75dab8b249,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ButtonAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 114587576578142256, guid: 7f6a00ac31bfd5a4fad23a75dab8b249,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1108651529}
+    - target: {fileID: 114587576578142256, guid: 7f6a00ac31bfd5a4fad23a75dab8b249,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ButtonAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 114399569334051712, guid: 7f6a00ac31bfd5a4fad23a75dab8b249,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1108651529}
+    - target: {fileID: 114399569334051712, guid: 7f6a00ac31bfd5a4fad23a75dab8b249,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ButtonAction
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f6a00ac31bfd5a4fad23a75dab8b249, type: 2}
@@ -3191,7 +3221,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 206374466}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &708266607
 Rigidbody2D:
@@ -11335,7 +11365,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 206374466}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1802916660
 Rigidbody2D:
@@ -12304,7 +12334,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 206374466}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2096757860
 Rigidbody2D:
