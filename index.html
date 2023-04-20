@@ -57,11 +57,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/expandingSpace.loader.js";
+      var loaderUrl = buildUrl + "/build.loader.js";
       var config = {
-        dataUrl: buildUrl + "/expandingSpace.data.gz",
-        frameworkUrl: buildUrl + "/expandingSpace.framework.js.gz",
-        codeUrl: buildUrl + "/expandingSpace.wasm.gz",
+        dataUrl: buildUrl + "/build.data",
+        frameworkUrl: buildUrl + "/build.framework.js",
+        codeUrl: buildUrl + "/build.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "SpaceDuckies",
         productName: "Spacie's Adventure",
@@ -98,7 +98,7 @@
         canvas.style.height = "600px";
       }
 
-      canvas.style.background = "url('" + buildUrl + "/expandingSpace.jpg.gz') center / cover";
+      canvas.style.background = "url('" + buildUrl + "/build.jpg') center / cover";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
